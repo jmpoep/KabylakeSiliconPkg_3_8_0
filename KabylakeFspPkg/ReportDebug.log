@@ -1,0 +1,1105 @@
+Platform Summary
+Platform Name:        SkylakeFspPkg
+Platform DSC Path:    c:\bios\fsp\kein2\SkylakeFspPkg\SkylakeFspPkg.dsc
+Architectures:        IA32
+Tool Chain:           VS2008x86
+Target:               DEBUG
+Output Path:          c:\bios\fsp\kein2\Build\SkylakeFspPkg
+Build Environment:    Windows-7-6.1.7601-SP1
+Build Duration:       00:00:45
+Report Content:       PCD, LIBRARY, BUILD_FLAGS, DEPEX, FLASH, FIXED_ADDRESS
+>======================================================================================================================<
+Platform Configuration Database Report
+  *P  - Platform scoped PCD override in DSC file
+  *F  - Platform scoped PCD override in FDF file
+  *M  - Module scoped PCD override
+========================================================================================================================
+
+gEfiMdePkgTokenSpaceGuid
+    PcdVerifyNodeInList                      :   FLAG  (BOOLEAN) = 0                     
+    PcdMaximumLinkedListLength               :  FIXED   (UINT32) = 1000000               
+    PcdMaximumAsciiStringLength              :  FIXED   (UINT32) = 1000000               
+    PcdMaximumUnicodeStringLength            :  FIXED   (UINT32) = 1000000               
+    PcdDebugClearMemoryValue                 :  FIXED    (UINT8) = 0xAF                  
+ *P PcdDebugPropertyMask                     :  FIXED    (UINT8) = 0x27                  
+                                                     DEC DEFAULT = 0
+    PcdReportStatusCodePropertyMask          :  FIXED    (UINT8) = 0                     
+    PcdPerformanceLibraryPropertyMask        :  FIXED    (UINT8) = 0                     
+    PcdPostCodePropertyMask                  :  FIXED    (UINT8) = 0                     
+    PcdPciExpressBaseAddress                 :  PATCH   (UINT64) = 0xE0000000            
+ *P PcdDebugPrintErrorLevel                  :  PATCH   (UINT32) = 0x80000042            
+                                                     DEC DEFAULT = 0x80000000
+
+gEfiMdeModulePkgTokenSpaceGuid
+    PcdPeiCoreImageLoaderSearchTeSectionFirst:   FLAG  (BOOLEAN) = 1                     
+    PcdFrameworkCompatibilitySupport         :   FLAG  (BOOLEAN) = 0                     
+    PcdPeiFullPcdDatabaseEnable              :   FLAG  (BOOLEAN) = 1                     
+    PcdPeiCoreMaxFvSupported                 :  FIXED   (UINT32) = 6                     
+    PcdPeiCoreMaxPeimPerFv                   :  FIXED   (UINT32) = 32                    
+    PcdPeiCoreMaxPpiSupported                :  FIXED   (UINT32) = 64                    
+    PcdPeiCoreMaxPeiStackSize                :  FIXED   (UINT32) = 0x20000               
+    PcdLoadModuleAtFixAddressEnable          :  FIXED   (UINT64) = 0                     
+    PcdMaxPeiPerformanceLogEntries           :  FIXED    (UINT8) = 40                    
+    PcdMaxPeiPcdCallBackNumberPerPcdEntry    :  FIXED   (UINT32) = 0x08                  
+    PcdLoadFixAddressPeiCodePageNumber       :  PATCH   (UINT32) = 0                     
+    PcdLoadFixAddressBootTimeCodePageNumber  :  PATCH   (UINT32) = 0                     
+    PcdLoadFixAddressRuntimeCodePageNumber   :  PATCH   (UINT32) = 0                     
+ *P PcdVpdBaseAddress                        :  PATCH   (UINT32) = 0x12345678            
+                                                     DEC DEFAULT = 0x0
+
+gCommonFspPkgTokenSpaceGuid
+    PcdFspReservedMemoryLength               : DYNVPD   (UINT32) = 0x00100000            
+                                       0x0010
+ *P PcdGlobalDataPointerAddress              :  FIXED   (UINT32) = 0xFED00148            
+                                                     DEC DEFAULT = 0xFED00108
+    PcdTemporaryRamBase                      :  FIXED   (UINT32) = 0xFEF00000            
+ *P PcdTemporaryRamSize                      :  FIXED   (UINT32) = 0x00040000            
+                                                     DEC DEFAULT = 0x2000
+ *P PcdFspTemporaryRamSize                   :  FIXED   (UINT32) = 0x0003C000            
+                                                     DEC DEFAULT = 0x1000
+    PcdBootLoaderEntry                       :  FIXED   (UINT32) = 0xFFFFFFE4            
+
+gLavaCanyonFspPkgTokenSpaceGuid
+    PcdVpdRegionSign                         : DYNVPD   (UINT64) = 0x534450565F425346    
+                                       0x0000
+    PcdImageRevision                         : DYNVPD   (UINT32) = 0x00000001            
+                                       0x0008
+    PcdUpdRegionOffset                       : DYNVPD   (UINT32) = 0x00000000            
+                                       0x000C
+    PcdStatusCodeUseIsaSerial                :   FLAG  (BOOLEAN) = 1                     
+    PcdSerialRegisterBase                    :   FLAG   (UINT64) = 0x3f8                 
+    SerialPortEnable                         :  FIXED  (BOOLEAN) = 1                     
+ *F PcdFspAreaBaseAddress                    :  FIXED   (UINT32) = 0xFFF60000            
+                                                     DEC DEFAULT = 0xFFF80000
+ *F PcdFspAreaSize                           :  FIXED   (UINT32) = 0x00080000            
+                                                     DEC DEFAULT = 0x00040000
+ *F PcdFlashFvRecoveryBase                   :  FIXED   (UINT32) = 0xFFF60000            
+                                                     DEC DEFAULT = 0xFFF80000
+ *F PcdFlashFvRecoverySize                   :  FIXED   (UINT32) = 0x00080000            
+                                                     DEC DEFAULT = 0x00040000
+ *P PcdFspImageRevision                      :  FIXED   (UINT32) = 0x00000080            
+                                                     DEC DEFAULT = 0x00
+ *P PcdFspImageIdString                      :  FIXED   (UINT64) = 0x305053462D575348    
+                                                     DEC DEFAULT = 0x305053462D4E5641
+<======================================================================================================================>
+
+>======================================================================================================================<
+Firmware Device (FD)
+FD Name:            BDWFSP
+Base Address:       0xFFF60000
+Size:               0x80000 (512K)
+========================================================================================================================
+>----------------------------------------------------------------------------------------------------------------------<
+Fd Region
+Type:               FV
+Base Address:       0x0
+Size:               0x80000 (512K)
+Fv Name:            BDWFSP (39.3% Full)
+Occupied Size:      0x324F8 (201K)
+Free Size:          0x4DB08 (311K)
+Offset     Module
+------------------------------------------------------------------------------------------------------------------------
+0x00000078 FspHeader (c:\bios\fsp\kein2\SkylakeFspPkg\FspHeader\FspHeader.inf)
+0x000000F8 PeiCore (c:\bios\fsp\kein2\MdeModulePkg\Core\Pei\PeiMain.inf)
+0x00008920 PcdPeim (c:\bios\fsp\kein2\MdeModulePkg\Universal\PCD\Pei\Pcd.inf)
+0x0000BD70 c:\bios\fsp\kein2\Build/SkylakeFspPkg/DEBUG_VS2008x86/FV/3E18A0B3-C3B5-492b-86B4-53E3D401C249.bin
+0x0000C0B8 PchInitPeim (c:\bios\fsp\kein2\SkylakeSiPkg\Pch\PchInit\Pei\PchInitPeim.inf)
+0x00018FF0 SaInitPeim (c:\bios\fsp\kein2\SkylakeSiPkg\SystemAgent\SaInit\Pei\SaInitPeim.inf)
+0x00025610 PlatformEarlyInit (c:\bios\fsp\kein2\SkylakeFspPkg\PlatformEarlyInit\PlatformEarlyInit.inf)
+0x0002AD48 DxeIpl (c:\bios\fsp\kein2\CommonFspPkg\DxeIpl\DxeIpl.inf)
+0x0002DB30 PlatformLateInit (c:\bios\fsp\kein2\SkylakeFspPkg\PlatformLateInit\PlatformLateInit.inf)
+0x0002F758 c:\bios\fsp\kein2\SkylakeFspPkg/FspDescription/FspDescription.txt
+0x0007D2C8 SecCore (c:\bios\fsp\kein2\CommonFspPkg\SecCore\SecCore.inf)
+<---------------------------------------------------------------------------------------------------------------------->
+<======================================================================================================================>
+
+>======================================================================================================================<
+Module Summary
+Module Name:          SecCore
+Module INF Path:      CommonFspPkg\SecCore\SecCore.inf
+File GUID:            1BA0062E-C779-4582-8566-336AE8F78F09
+Size:                 0x2E60 (11.59K)
+Build Time Stamp:     1969-12-31 16:00:00
+Driver Type:          0x3 (SECURITY_CORE)
+========================================================================================================================
+>----------------------------------------------------------------------------------------------------------------------<
+PCD
+------------------------------------------------------------------------------------------------------------------------
+gEfiMdePkgTokenSpaceGuid
+    PcdVerifyNodeInList                      :   FLAG  (BOOLEAN) = 0                     
+    PcdMaximumLinkedListLength               :  FIXED   (UINT32) = 1000000               
+    PcdMaximumAsciiStringLength              :  FIXED   (UINT32) = 1000000               
+    PcdMaximumUnicodeStringLength            :  FIXED   (UINT32) = 1000000               
+    PcdDebugClearMemoryValue                 :  FIXED    (UINT8) = 0xAF                  
+ *P PcdDebugPropertyMask                     :  FIXED    (UINT8) = 0x27                  
+                                                     DEC DEFAULT = 0
+    PcdPciExpressBaseAddress                 :  PATCH   (UINT64) = 0xE0000000            
+ *P PcdDebugPrintErrorLevel                  :  PATCH   (UINT32) = 0x80000042            
+                                                     DEC DEFAULT = 0x80000000
+gCommonFspPkgTokenSpaceGuid
+ *P PcdGlobalDataPointerAddress              :  FIXED   (UINT32) = 0xFED00148            
+                                                     DEC DEFAULT = 0xFED00108
+    PcdTemporaryRamBase                      :  FIXED   (UINT32) = 0xFEF00000            
+ *P PcdTemporaryRamSize                      :  FIXED   (UINT32) = 0x00040000            
+                                                     DEC DEFAULT = 0x2000
+ *P PcdFspTemporaryRamSize                   :  FIXED   (UINT32) = 0x0003C000            
+                                                     DEC DEFAULT = 0x1000
+gLavaCanyonFspPkgTokenSpaceGuid
+    PcdStatusCodeUseIsaSerial                :   FLAG  (BOOLEAN) = 1                     
+    PcdSerialRegisterBase                    :   FLAG   (UINT64) = 0x3f8                 
+    SerialPortEnable                         :  FIXED  (BOOLEAN) = 1                     
+ *F PcdFspAreaBaseAddress                    :  FIXED   (UINT32) = 0xFFF60000            
+                                                     DEC DEFAULT = 0xFFF80000
+ *F PcdFspAreaSize                           :  FIXED   (UINT32) = 0x00080000            
+                                                     DEC DEFAULT = 0x00040000
+ *F PcdFlashFvRecoveryBase                   :  FIXED   (UINT32) = 0xFFF60000            
+                                                     DEC DEFAULT = 0xFFF80000
+ *F PcdFlashFvRecoverySize                   :  FIXED   (UINT32) = 0x00080000            
+                                                     DEC DEFAULT = 0x00040000
+<---------------------------------------------------------------------------------------------------------------------->
+>----------------------------------------------------------------------------------------------------------------------<
+Library
+------------------------------------------------------------------------------------------------------------------------
+c:\bios\fsp\kein2\MdePkg\Library\PeiMemoryAllocationLib\PeiMemoryAllocationLib.inf
+{MemoryAllocationLib}
+c:\bios\fsp\kein2\MdePkg\Library\PeiServicesTablePointerLibIdt\PeiServicesTablePointerLibIdt.inf
+{PeiServicesTablePointerLib}
+c:\bios\fsp\kein2\MdePkg\Library\PeiServicesLib\PeiServicesLib.inf
+{PeiServicesLib}
+c:\bios\fsp\kein2\MdePkg\Library\PeiPcdLib\PeiPcdLib.inf
+{PcdLib}
+c:\bios\fsp\kein2\MdePkg\Library\BaseLib\BaseLib.inf
+{BaseLib}
+c:\bios\fsp\kein2\MdePkg\Library\BaseMemoryLibRepStr\BaseMemoryLibRepStr.inf
+{BaseMemoryLib}
+c:\bios\fsp\kein2\MdePkg\Library\BaseIoLibIntrinsic\BaseIoLibIntrinsic.inf
+{IoLib}
+c:\bios\fsp\kein2\MdePkg\Library\BasePciExpressLib\BasePciExpressLib.inf
+{PciExpressLib}
+c:\bios\fsp\kein2\MdePkg\Library\BasePciLibPciExpress\BasePciLibPciExpress.inf
+{PciLib}
+c:\bios\fsp\kein2\SkylakeFspPkg\Library\AcpiTimerLib\AcpiTimerLib.inf
+{TimerLib}
+c:\bios\fsp\kein2\MdePkg\Library\BaseDebugPrintErrorLevelLib\BaseDebugPrintErrorLevelLib.inf
+{DebugPrintErrorLevelLib}
+c:\bios\fsp\kein2\MdePkg\Library\BasePrintLib\BasePrintLib.inf
+{PrintLib}
+c:\bios\fsp\kein2\SkylakeFspPkg\Library\SerialPortLib\SerialPortLib.inf
+{SerialPortLib}
+c:\bios\fsp\kein2\MdePkg\Library\BaseDebugLibSerialPort\BaseDebugLibSerialPort.inf
+{DebugLib:  C = BaseDebugLibSerialPortConstructor}
+c:\bios\fsp\kein2\MdePkg\Library\BasePciCf8Lib\BasePciCf8Lib.inf
+{PciCf8Lib}
+c:\bios\fsp\kein2\CommonFspPkg\Library\SwitchStackLib\SwitchStackLib.inf
+{SwitchStackLib}
+c:\bios\fsp\kein2\SkylakeFspPkg\Library\PlatformSecLib\PlatformSecLib.inf
+{PlatformSecLib:  C = PlatformSecLibConstructor}
+c:\bios\fsp\kein2\CommonFspPkg\Library\FspCommonLib\FspCommonLib.inf
+{FspCommonLib}
+<---------------------------------------------------------------------------------------------------------------------->
+>----------------------------------------------------------------------------------------------------------------------<
+Depex
+<---------------------------------------------------------------------------------------------------------------------->
+>----------------------------------------------------------------------------------------------------------------------<
+Build Flags
+Tool Chain Tag: VS2008x86
+------------------------------------------------------------------------------------------------------------------------
+ASM_FLAGS =  /nologo /c /WX /W3 /Cx /coff /Zd /Zi
+------------------------------------------------------------------------------------------------------------------------
+CC_FLAGS =  /nologo /c /WX /GS- /W4 /Gs32768 /D UNICODE /O1ib2 /GL /FIAutoGen.h /EHs-c- /GR- /GF /Gy /Zi /Gm /wd4819 /D
+FSP
+------------------------------------------------------------------------------------------------------------------------
+ASMLINK_FLAGS =  /nologo /tiny
+------------------------------------------------------------------------------------------------------------------------
+SLINK_FLAGS =  /NOLOGO /LTCG
+------------------------------------------------------------------------------------------------------------------------
+PP_FLAGS =  /nologo /E /TC /FIAutoGen.h /wd4819 /D FSP
+------------------------------------------------------------------------------------------------------------------------
+DLINK_FLAGS =  /NOLOGO /NODEFAULTLIB /IGNORE:4001 /OPT:REF /OPT:ICF=10 /MAP /ALIGN:32 /SECTION:.xdata,D
+/SECTION:.pdata,D /MACHINE:X86 /LTCG /DLL /ENTRY:$(IMAGE_ENTRY_POINT) /SUBSYSTEM:EFI_BOOT_SERVICE_DRIVER /SAFESEH:NO
+/BASE:0 /DRIVER /DEBUG
+<---------------------------------------------------------------------------------------------------------------------->
+<======================================================================================================================>
+
+>======================================================================================================================<
+Module Summary
+Module Name:          PeiCore
+Module INF Path:      MdeModulePkg\Core\Pei\PeiMain.inf
+File GUID:            52C05B14-0B98-496c-BC3B-04B50211D680
+Size:                 0x8980 (34.38K)
+Build Time Stamp:     1969-12-31 16:00:00
+Driver Type:          0x4 (PEI_CORE)
+========================================================================================================================
+>----------------------------------------------------------------------------------------------------------------------<
+PCD
+------------------------------------------------------------------------------------------------------------------------
+gEfiMdePkgTokenSpaceGuid
+    PcdVerifyNodeInList                      :   FLAG  (BOOLEAN) = 0                     
+    PcdMaximumLinkedListLength               :  FIXED   (UINT32) = 1000000               
+    PcdMaximumAsciiStringLength              :  FIXED   (UINT32) = 1000000               
+    PcdMaximumUnicodeStringLength            :  FIXED   (UINT32) = 1000000               
+    PcdDebugClearMemoryValue                 :  FIXED    (UINT8) = 0xAF                  
+ *P PcdDebugPropertyMask                     :  FIXED    (UINT8) = 0x27                  
+                                                     DEC DEFAULT = 0
+    PcdReportStatusCodePropertyMask          :  FIXED    (UINT8) = 0                     
+    PcdPerformanceLibraryPropertyMask        :  FIXED    (UINT8) = 0                     
+    PcdPciExpressBaseAddress                 :  PATCH   (UINT64) = 0xE0000000            
+ *P PcdDebugPrintErrorLevel                  :  PATCH   (UINT32) = 0x80000042            
+                                                     DEC DEFAULT = 0x80000000
+gEfiMdeModulePkgTokenSpaceGuid
+    PcdPeiCoreImageLoaderSearchTeSectionFirst:   FLAG  (BOOLEAN) = 1                     
+    PcdFrameworkCompatibilitySupport         :   FLAG  (BOOLEAN) = 0                     
+    PcdPeiCoreMaxFvSupported                 :  FIXED   (UINT32) = 6                     
+    PcdPeiCoreMaxPeimPerFv                   :  FIXED   (UINT32) = 32                    
+    PcdPeiCoreMaxPpiSupported                :  FIXED   (UINT32) = 64                    
+    PcdPeiCoreMaxPeiStackSize                :  FIXED   (UINT32) = 0x20000               
+    PcdLoadModuleAtFixAddressEnable          :  FIXED   (UINT64) = 0                     
+    PcdMaxPeiPerformanceLogEntries           :  FIXED    (UINT8) = 40                    
+    PcdLoadFixAddressPeiCodePageNumber       :  PATCH   (UINT32) = 0                     
+    PcdLoadFixAddressBootTimeCodePageNumber  :  PATCH   (UINT32) = 0                     
+    PcdLoadFixAddressRuntimeCodePageNumber   :  PATCH   (UINT32) = 0                     
+gLavaCanyonFspPkgTokenSpaceGuid
+    PcdStatusCodeUseIsaSerial                :   FLAG  (BOOLEAN) = 1                     
+    PcdSerialRegisterBase                    :   FLAG   (UINT64) = 0x3f8                 
+    SerialPortEnable                         :  FIXED  (BOOLEAN) = 1                     
+<---------------------------------------------------------------------------------------------------------------------->
+>----------------------------------------------------------------------------------------------------------------------<
+Library
+------------------------------------------------------------------------------------------------------------------------
+c:\bios\fsp\kein2\MdePkg\Library\PeiPcdLib\PeiPcdLib.inf
+{PcdLib}
+c:\bios\fsp\kein2\MdePkg\Library\PeiServicesTablePointerLibIdt\PeiServicesTablePointerLibIdt.inf
+{PeiServicesTablePointerLib}
+c:\bios\fsp\kein2\MdePkg\Library\PeiMemoryAllocationLib\PeiMemoryAllocationLib.inf
+{MemoryAllocationLib}
+c:\bios\fsp\kein2\MdePkg\Library\BaseLib\BaseLib.inf
+{BaseLib}
+c:\bios\fsp\kein2\MdePkg\Library\PeiServicesLib\PeiServicesLib.inf
+{PeiServicesLib}
+c:\bios\fsp\kein2\MdePkg\Library\BaseMemoryLibRepStr\BaseMemoryLibRepStr.inf
+{BaseMemoryLib}
+c:\bios\fsp\kein2\MdePkg\Library\BaseIoLibIntrinsic\BaseIoLibIntrinsic.inf
+{IoLib}
+c:\bios\fsp\kein2\MdePkg\Library\BasePciExpressLib\BasePciExpressLib.inf
+{PciExpressLib}
+c:\bios\fsp\kein2\MdePkg\Library\BasePciLibPciExpress\BasePciLibPciExpress.inf
+{PciLib}
+c:\bios\fsp\kein2\SkylakeFspPkg\Library\AcpiTimerLib\AcpiTimerLib.inf
+{TimerLib}
+c:\bios\fsp\kein2\MdePkg\Library\BaseDebugPrintErrorLevelLib\BaseDebugPrintErrorLevelLib.inf
+{DebugPrintErrorLevelLib}
+c:\bios\fsp\kein2\MdePkg\Library\BasePrintLib\BasePrintLib.inf
+{PrintLib}
+c:\bios\fsp\kein2\SkylakeFspPkg\Library\SerialPortLib\SerialPortLib.inf
+{SerialPortLib}
+c:\bios\fsp\kein2\MdePkg\Library\BaseDebugLibSerialPort\BaseDebugLibSerialPort.inf
+{DebugLib:  C = BaseDebugLibSerialPortConstructor}
+c:\bios\fsp\kein2\MdeModulePkg\Library\OemHookStatusCodeLibNull\OemHookStatusCodeLibNull.inf
+{OemHookStatusCodeLib}
+c:\bios\fsp\kein2\MdePkg\Library\PeiHobLib\PeiHobLib.inf
+{HobLib}
+c:\bios\fsp\kein2\MdePkg\Library\BasePeCoffExtraActionLibNull\BasePeCoffExtraActionLibNull.inf
+{PeCoffExtraActionLib}
+c:\bios\fsp\kein2\MdePkg\Library\BasePeCoffGetEntryPointLib\BasePeCoffGetEntryPointLib.inf
+{PeCoffGetEntryPointLib}
+c:\bios\fsp\kein2\MdeModulePkg\Library\PeiReportStatusCodeLib\PeiReportStatusCodeLib.inf
+{ReportStatusCodeLib}
+c:\bios\fsp\kein2\MdeModulePkg\Library\PeiPerformanceLib\PeiPerformanceLib.inf
+{PerformanceLib}
+c:\bios\fsp\kein2\MdePkg\Library\PeiCoreEntryPoint\PeiCoreEntryPoint.inf
+{PeiCoreEntryPoint}
+c:\bios\fsp\kein2\MdePkg\Library\BaseCacheMaintenanceLib\BaseCacheMaintenanceLib.inf
+{CacheMaintenanceLib}
+c:\bios\fsp\kein2\MdePkg\Library\BasePeCoffLib\BasePeCoffLib.inf
+{PeCoffLib}
+<---------------------------------------------------------------------------------------------------------------------->
+>----------------------------------------------------------------------------------------------------------------------<
+Depex
+<---------------------------------------------------------------------------------------------------------------------->
+>----------------------------------------------------------------------------------------------------------------------<
+Build Flags
+Tool Chain Tag: VS2008x86
+------------------------------------------------------------------------------------------------------------------------
+SLINK_FLAGS =  /NOLOGO /LTCG
+------------------------------------------------------------------------------------------------------------------------
+DLINK_FLAGS =  /NOLOGO /NODEFAULTLIB /IGNORE:4001 /OPT:REF /OPT:ICF=10 /MAP /ALIGN:32 /SECTION:.xdata,D
+/SECTION:.pdata,D /MACHINE:X86 /LTCG /DLL /ENTRY:$(IMAGE_ENTRY_POINT) /SUBSYSTEM:EFI_BOOT_SERVICE_DRIVER /SAFESEH:NO
+/BASE:0 /DRIVER /DEBUG
+------------------------------------------------------------------------------------------------------------------------
+CC_FLAGS =  /nologo /c /WX /GS- /W4 /Gs32768 /D UNICODE /O1ib2 /GL /FIAutoGen.h /EHs-c- /GR- /GF /Gy /Zi /Gm /wd4819 /D
+FSP
+<---------------------------------------------------------------------------------------------------------------------->
+>----------------------------------------------------------------------------------------------------------------------<
+Fixed Address Prediction
+*I  Image Loading Address
+*E  Entry Point Address
+*N  Notification Function Address
+*F  Flash Address
+*M  Memory Address
+*S  SMM RAM Offset
+TOM Top of Memory
+Type Address           Name
+------------------------------------------------------------------------------------------------------------------------
+*IF  0x00fff60114      (Image Base)
+*EF  0x00fff601dc      _ModuleEntryPoint
+<======================================================================================================================>
+
+>======================================================================================================================<
+Module Summary
+Module Name:          PcdPeim
+Module INF Path:      MdeModulePkg\Universal\PCD\Pei\Pcd.inf
+File GUID:            9B3ADA4F-AE56-4c24-8DEA-F03B7558AE50
+Size:                 0x35A0 (13.41K)
+Build Time Stamp:     1969-12-31 16:00:00
+Driver Type:          0x6 (PEIM)
+========================================================================================================================
+>----------------------------------------------------------------------------------------------------------------------<
+PCD
+------------------------------------------------------------------------------------------------------------------------
+gEfiMdePkgTokenSpaceGuid
+    PcdVerifyNodeInList                      :   FLAG  (BOOLEAN) = 0                     
+    PcdMaximumLinkedListLength               :  FIXED   (UINT32) = 1000000               
+    PcdMaximumAsciiStringLength              :  FIXED   (UINT32) = 1000000               
+    PcdMaximumUnicodeStringLength            :  FIXED   (UINT32) = 1000000               
+    PcdDebugClearMemoryValue                 :  FIXED    (UINT8) = 0xAF                  
+ *P PcdDebugPropertyMask                     :  FIXED    (UINT8) = 0x27                  
+                                                     DEC DEFAULT = 0
+    PcdPciExpressBaseAddress                 :  PATCH   (UINT64) = 0xE0000000            
+ *P PcdDebugPrintErrorLevel                  :  PATCH   (UINT32) = 0x80000042            
+                                                     DEC DEFAULT = 0x80000000
+gEfiMdeModulePkgTokenSpaceGuid
+    PcdPeiFullPcdDatabaseEnable              :   FLAG  (BOOLEAN) = 1                     
+    PcdMaxPeiPcdCallBackNumberPerPcdEntry    :  FIXED   (UINT32) = 0x08                  
+ *P PcdVpdBaseAddress                        :  PATCH   (UINT32) = 0x12345678            
+                                                     DEC DEFAULT = 0x0
+gLavaCanyonFspPkgTokenSpaceGuid
+    PcdStatusCodeUseIsaSerial                :   FLAG  (BOOLEAN) = 1                     
+    PcdSerialRegisterBase                    :   FLAG   (UINT64) = 0x3f8                 
+    SerialPortEnable                         :  FIXED  (BOOLEAN) = 1                     
+<---------------------------------------------------------------------------------------------------------------------->
+>----------------------------------------------------------------------------------------------------------------------<
+Library
+------------------------------------------------------------------------------------------------------------------------
+c:\bios\fsp\kein2\MdePkg\Library\PeiMemoryAllocationLib\PeiMemoryAllocationLib.inf
+{MemoryAllocationLib}
+c:\bios\fsp\kein2\MdePkg\Library\PeiServicesTablePointerLibIdt\PeiServicesTablePointerLibIdt.inf
+{PeiServicesTablePointerLib}
+c:\bios\fsp\kein2\MdePkg\Library\BaseLib\BaseLib.inf
+{BaseLib}
+c:\bios\fsp\kein2\MdePkg\Library\PeiServicesLib\PeiServicesLib.inf
+{PeiServicesLib}
+c:\bios\fsp\kein2\MdePkg\Library\BasePcdLibNull\BasePcdLibNull.inf
+{PcdLib}
+c:\bios\fsp\kein2\MdePkg\Library\BaseMemoryLibRepStr\BaseMemoryLibRepStr.inf
+{BaseMemoryLib}
+c:\bios\fsp\kein2\MdePkg\Library\BaseIoLibIntrinsic\BaseIoLibIntrinsic.inf
+{IoLib}
+c:\bios\fsp\kein2\MdePkg\Library\BasePciExpressLib\BasePciExpressLib.inf
+{PciExpressLib}
+c:\bios\fsp\kein2\MdePkg\Library\BasePciLibPciExpress\BasePciLibPciExpress.inf
+{PciLib}
+c:\bios\fsp\kein2\SkylakeFspPkg\Library\AcpiTimerLib\AcpiTimerLib.inf
+{TimerLib}
+c:\bios\fsp\kein2\MdePkg\Library\BaseDebugPrintErrorLevelLib\BaseDebugPrintErrorLevelLib.inf
+{DebugPrintErrorLevelLib}
+c:\bios\fsp\kein2\MdePkg\Library\BasePrintLib\BasePrintLib.inf
+{PrintLib}
+c:\bios\fsp\kein2\SkylakeFspPkg\Library\SerialPortLib\SerialPortLib.inf
+{SerialPortLib}
+c:\bios\fsp\kein2\MdePkg\Library\BaseDebugLibSerialPort\BaseDebugLibSerialPort.inf
+{DebugLib:  C = BaseDebugLibSerialPortConstructor}
+c:\bios\fsp\kein2\MdePkg\Library\PeiHobLib\PeiHobLib.inf
+{HobLib}
+c:\bios\fsp\kein2\MdePkg\Library\PeimEntryPoint\PeimEntryPoint.inf
+{PeimEntryPoint}
+<---------------------------------------------------------------------------------------------------------------------->
+>----------------------------------------------------------------------------------------------------------------------<
+Final Dependency Expression (DEPEX) Instructions
+  TRUE
+  END
+------------------------------------------------------------------------------------------------------------------------
+Dependency Expression (DEPEX) from INF
+(TRUE)
+------------------------------------------------------------------------------------------------------------------------
+From Module INF:  TRUE
+From Library INF: (None)
+<---------------------------------------------------------------------------------------------------------------------->
+>----------------------------------------------------------------------------------------------------------------------<
+Build Flags
+Tool Chain Tag: VS2008x86
+------------------------------------------------------------------------------------------------------------------------
+SLINK_FLAGS =  /NOLOGO /LTCG
+------------------------------------------------------------------------------------------------------------------------
+DLINK_FLAGS =  /NOLOGO /NODEFAULTLIB /IGNORE:4001 /OPT:REF /OPT:ICF=10 /MAP /ALIGN:32 /SECTION:.xdata,D
+/SECTION:.pdata,D /MACHINE:X86 /LTCG /DLL /ENTRY:$(IMAGE_ENTRY_POINT) /SUBSYSTEM:EFI_BOOT_SERVICE_DRIVER /SAFESEH:NO
+/BASE:0 /DRIVER /DEBUG
+------------------------------------------------------------------------------------------------------------------------
+CC_FLAGS =  /nologo /c /WX /GS- /W4 /Gs32768 /D UNICODE /O1ib2 /GL /FIAutoGen.h /EHs-c- /GR- /GF /Gy /Zi /Gm /wd4819 /D
+FSP
+<---------------------------------------------------------------------------------------------------------------------->
+>----------------------------------------------------------------------------------------------------------------------<
+Fixed Address Prediction
+*I  Image Loading Address
+*E  Entry Point Address
+*N  Notification Function Address
+*F  Flash Address
+*M  Memory Address
+*S  SMM RAM Offset
+TOM Top of Memory
+Type Address           Name
+------------------------------------------------------------------------------------------------------------------------
+*IF  0x00fff68944      (Image Base)
+*EF  0x00fff68a0c      _ModuleEntryPoint
+<======================================================================================================================>
+
+>======================================================================================================================<
+Module Summary
+Module Name:          FspHeader
+Module INF Path:      SkylakeFspPkg\FspHeader\FspHeader.inf
+File GUID:            912740BE-2284-4734-B971-84B027353F0C
+Driver Type:          0x2 (FREE_FORM)
+========================================================================================================================
+>----------------------------------------------------------------------------------------------------------------------<
+PCD
+------------------------------------------------------------------------------------------------------------------------
+gLavaCanyonFspPkgTokenSpaceGuid
+    PcdVpdRegionSign                         : DYNVPD   (UINT64) = 0x534450565F425346    
+                                       0x0000
+ *F PcdFspAreaBaseAddress                    :  FIXED   (UINT32) = 0xFFF60000            
+                                                     DEC DEFAULT = 0xFFF80000
+ *F PcdFspAreaSize                           :  FIXED   (UINT32) = 0x00080000            
+                                                     DEC DEFAULT = 0x00040000
+ *P PcdFspImageRevision                      :  FIXED   (UINT32) = 0x00000080            
+                                                     DEC DEFAULT = 0x00
+ *P PcdFspImageIdString                      :  FIXED   (UINT64) = 0x305053462D575348    
+                                                     DEC DEFAULT = 0x305053462D4E5641
+<---------------------------------------------------------------------------------------------------------------------->
+>----------------------------------------------------------------------------------------------------------------------<
+Library
+<---------------------------------------------------------------------------------------------------------------------->
+>----------------------------------------------------------------------------------------------------------------------<
+Depex
+<---------------------------------------------------------------------------------------------------------------------->
+>----------------------------------------------------------------------------------------------------------------------<
+Build Flags
+Tool Chain Tag: VS2008x86
+------------------------------------------------------------------------------------------------------------------------
+SLINK_FLAGS =  /NOLOGO /LTCG
+------------------------------------------------------------------------------------------------------------------------
+ASLCC_FLAGS =  /nologo /c /FIAutoGen.h /TC /Dmain=ReferenceAcpiTable
+------------------------------------------------------------------------------------------------------------------------
+ASLDLINK_FLAGS =  /NODEFAULTLIB /ENTRY:ReferenceAcpiTable /SUBSYSTEM:CONSOLE
+------------------------------------------------------------------------------------------------------------------------
+DLINK_FLAGS =  /NOLOGO /NODEFAULTLIB /IGNORE:4001 /OPT:REF /OPT:ICF=10 /MAP /ALIGN:32 /SECTION:.xdata,D
+/SECTION:.pdata,D /MACHINE:X86 /LTCG /DLL /ENTRY:$(IMAGE_ENTRY_POINT) /SUBSYSTEM:EFI_BOOT_SERVICE_DRIVER /SAFESEH:NO
+/BASE:0 /DRIVER /DEBUG
+------------------------------------------------------------------------------------------------------------------------
+CC_FLAGS =  /nologo /c /WX /GS- /W4 /Gs32768 /D UNICODE /O1ib2 /GL /FIAutoGen.h /EHs-c- /GR- /GF /Gy /Zi /Gm /wd4819 /D
+FSP
+<---------------------------------------------------------------------------------------------------------------------->
+<======================================================================================================================>
+
+>======================================================================================================================<
+Module Summary
+Module Name:          PchInitPeim
+Module INF Path:      SkylakeSiPkg\Pch\PchInit\Pei\PchInitPeim.inf
+File GUID:            FD236AE7-0791-48c4-B29E-29BDEEE1A838
+Size:                 0xD060 (52.09K)
+Build Time Stamp:     1969-12-31 16:00:00
+Driver Type:          0x6 (PEIM)
+========================================================================================================================
+>----------------------------------------------------------------------------------------------------------------------<
+PCD
+------------------------------------------------------------------------------------------------------------------------
+gEfiMdePkgTokenSpaceGuid
+    PcdVerifyNodeInList                      :   FLAG  (BOOLEAN) = 0                     
+    PcdMaximumLinkedListLength               :  FIXED   (UINT32) = 1000000               
+    PcdMaximumAsciiStringLength              :  FIXED   (UINT32) = 1000000               
+    PcdMaximumUnicodeStringLength            :  FIXED   (UINT32) = 1000000               
+    PcdDebugClearMemoryValue                 :  FIXED    (UINT8) = 0xAF                  
+ *P PcdDebugPropertyMask                     :  FIXED    (UINT8) = 0x27                  
+                                                     DEC DEFAULT = 0
+    PcdPciExpressBaseAddress                 :  PATCH   (UINT64) = 0xE0000000            
+ *P PcdDebugPrintErrorLevel                  :  PATCH   (UINT32) = 0x80000042            
+                                                     DEC DEFAULT = 0x80000000
+gLavaCanyonFspPkgTokenSpaceGuid
+    PcdStatusCodeUseIsaSerial                :   FLAG  (BOOLEAN) = 1                     
+    PcdSerialRegisterBase                    :   FLAG   (UINT64) = 0x3f8                 
+    SerialPortEnable                         :  FIXED  (BOOLEAN) = 1                     
+<---------------------------------------------------------------------------------------------------------------------->
+>----------------------------------------------------------------------------------------------------------------------<
+Library
+------------------------------------------------------------------------------------------------------------------------
+c:\bios\fsp\kein2\MdePkg\Library\PeiServicesTablePointerLibIdt\PeiServicesTablePointerLibIdt.inf
+{PeiServicesTablePointerLib}
+c:\bios\fsp\kein2\MdePkg\Library\PeiPcdLib\PeiPcdLib.inf
+{PcdLib:  Depex = gEfiPeiPcdPpiGuid }
+c:\bios\fsp\kein2\MdePkg\Library\BaseLib\BaseLib.inf
+{BaseLib}
+c:\bios\fsp\kein2\MdePkg\Library\PeiServicesLib\PeiServicesLib.inf
+{PeiServicesLib}
+c:\bios\fsp\kein2\MdePkg\Library\BaseMemoryLibRepStr\BaseMemoryLibRepStr.inf
+{BaseMemoryLib}
+c:\bios\fsp\kein2\MdePkg\Library\PeiMemoryAllocationLib\PeiMemoryAllocationLib.inf
+{MemoryAllocationLib}
+c:\bios\fsp\kein2\MdePkg\Library\BaseIoLibIntrinsic\BaseIoLibIntrinsic.inf
+{IoLib}
+c:\bios\fsp\kein2\MdePkg\Library\BasePciExpressLib\BasePciExpressLib.inf
+{PciExpressLib}
+c:\bios\fsp\kein2\MdePkg\Library\BasePciLibPciExpress\BasePciLibPciExpress.inf
+{PciLib}
+c:\bios\fsp\kein2\SkylakeFspPkg\Library\AcpiTimerLib\AcpiTimerLib.inf
+{TimerLib}
+c:\bios\fsp\kein2\MdePkg\Library\BaseDebugPrintErrorLevelLib\BaseDebugPrintErrorLevelLib.inf
+{DebugPrintErrorLevelLib}
+c:\bios\fsp\kein2\MdePkg\Library\BasePrintLib\BasePrintLib.inf
+{PrintLib}
+c:\bios\fsp\kein2\SkylakeFspPkg\Library\SerialPortLib\SerialPortLib.inf
+{SerialPortLib}
+c:\bios\fsp\kein2\MdePkg\Library\BaseDebugLibSerialPort\BaseDebugLibSerialPort.inf
+{DebugLib:  C = BaseDebugLibSerialPortConstructor}
+c:\bios\fsp\kein2\SkylakeSiPkg\Library\MmPciBaseLib\MmPciBaseLib.inf
+{MmPciBaseLib}
+c:\bios\fsp\kein2\SkylakeSiPkg\Pch\Library\PchPlatformLib\PchPlatformLib.inf
+{PchPlatformLib}
+c:\bios\fsp\kein2\MdePkg\Library\PeimEntryPoint\PeimEntryPoint.inf
+{PeimEntryPoint}
+c:\bios\fsp\kein2\SkylakeSiPkg\Pch\Library\PchPciExpressHelpersLib\PchPciExpressHelpersLib.inf
+{PchPciExpressHelpersLib}
+c:\bios\fsp\kein2\MdePkg\Library\PeiHobLib\PeiHobLib.inf
+{HobLib}
+<---------------------------------------------------------------------------------------------------------------------->
+>----------------------------------------------------------------------------------------------------------------------<
+Final Dependency Expression (DEPEX) Instructions
+  PUSH gEfiPeiPcdPpiGuid
+  END
+------------------------------------------------------------------------------------------------------------------------
+Dependency Expression (DEPEX) from INF
+(TRUE) AND (gEfiPeiPcdPpiGuid)
+------------------------------------------------------------------------------------------------------------------------
+From Module INF:  TRUE
+From Library INF: (gEfiPeiPcdPpiGuid)
+<---------------------------------------------------------------------------------------------------------------------->
+>----------------------------------------------------------------------------------------------------------------------<
+Build Flags
+Tool Chain Tag: VS2008x86
+------------------------------------------------------------------------------------------------------------------------
+SLINK_FLAGS =  /NOLOGO /LTCG
+------------------------------------------------------------------------------------------------------------------------
+DLINK_FLAGS =  /NOLOGO /NODEFAULTLIB /IGNORE:4001 /OPT:REF /OPT:ICF=10 /MAP /ALIGN:32 /SECTION:.xdata,D
+/SECTION:.pdata,D /MACHINE:X86 /LTCG /DLL /ENTRY:$(IMAGE_ENTRY_POINT) /SUBSYSTEM:EFI_BOOT_SERVICE_DRIVER /SAFESEH:NO
+/BASE:0 /DRIVER /DEBUG
+------------------------------------------------------------------------------------------------------------------------
+CC_FLAGS =  /nologo /c /WX /GS- /W4 /Gs32768 /D UNICODE /O1ib2 /GL /FIAutoGen.h /EHs-c- /GR- /GF /Gy /Zi /Gm /wd4819 /D
+FSP
+<---------------------------------------------------------------------------------------------------------------------->
+>----------------------------------------------------------------------------------------------------------------------<
+Fixed Address Prediction
+*I  Image Loading Address
+*E  Entry Point Address
+*N  Notification Function Address
+*F  Flash Address
+*M  Memory Address
+*S  SMM RAM Offset
+TOM Top of Memory
+Type Address           Name
+------------------------------------------------------------------------------------------------------------------------
+*IF  0x00fff6c0ec      (Image Base)
+*EF  0x00fff6c1c4      _ModuleEntryPoint
+<======================================================================================================================>
+
+>======================================================================================================================<
+Module Summary
+Module Name:          SaInitPeim
+Module INF Path:      SkylakeSiPkg\SystemAgent\SaInit\Pei\SaInitPeim.inf
+File GUID:            FD236AE7-0791-48c4-B29E-29BDEEE1A811
+Size:                 0xC6E0 (49.72K)
+Build Time Stamp:     1969-12-31 16:00:00
+Driver Type:          0x6 (PEIM)
+========================================================================================================================
+>----------------------------------------------------------------------------------------------------------------------<
+PCD
+------------------------------------------------------------------------------------------------------------------------
+gEfiMdePkgTokenSpaceGuid
+    PcdVerifyNodeInList                      :   FLAG  (BOOLEAN) = 0                     
+    PcdMaximumLinkedListLength               :  FIXED   (UINT32) = 1000000               
+    PcdMaximumAsciiStringLength              :  FIXED   (UINT32) = 1000000               
+    PcdMaximumUnicodeStringLength            :  FIXED   (UINT32) = 1000000               
+    PcdDebugClearMemoryValue                 :  FIXED    (UINT8) = 0xAF                  
+ *P PcdDebugPropertyMask                     :  FIXED    (UINT8) = 0x27                  
+                                                     DEC DEFAULT = 0
+    PcdPostCodePropertyMask                  :  FIXED    (UINT8) = 0                     
+    PcdPciExpressBaseAddress                 :  PATCH   (UINT64) = 0xE0000000            
+ *P PcdDebugPrintErrorLevel                  :  PATCH   (UINT32) = 0x80000042            
+                                                     DEC DEFAULT = 0x80000000
+gLavaCanyonFspPkgTokenSpaceGuid
+    PcdStatusCodeUseIsaSerial                :   FLAG  (BOOLEAN) = 1                     
+    PcdSerialRegisterBase                    :   FLAG   (UINT64) = 0x3f8                 
+    SerialPortEnable                         :  FIXED  (BOOLEAN) = 1                     
+<---------------------------------------------------------------------------------------------------------------------->
+>----------------------------------------------------------------------------------------------------------------------<
+Library
+------------------------------------------------------------------------------------------------------------------------
+c:\bios\fsp\kein2\MdePkg\Library\PeiMemoryAllocationLib\PeiMemoryAllocationLib.inf
+{MemoryAllocationLib}
+c:\bios\fsp\kein2\MdePkg\Library\PeiServicesTablePointerLibIdt\PeiServicesTablePointerLibIdt.inf
+{PeiServicesTablePointerLib}
+c:\bios\fsp\kein2\MdePkg\Library\PeiPcdLib\PeiPcdLib.inf
+{PcdLib:  Depex = gEfiPeiPcdPpiGuid }
+c:\bios\fsp\kein2\MdePkg\Library\PeiServicesLib\PeiServicesLib.inf
+{PeiServicesLib}
+c:\bios\fsp\kein2\MdePkg\Library\BaseMemoryLibRepStr\BaseMemoryLibRepStr.inf
+{BaseMemoryLib}
+c:\bios\fsp\kein2\MdePkg\Library\BaseLib\BaseLib.inf
+{BaseLib}
+c:\bios\fsp\kein2\MdePkg\Library\BaseIoLibIntrinsic\BaseIoLibIntrinsic.inf
+{IoLib}
+c:\bios\fsp\kein2\MdePkg\Library\BasePciExpressLib\BasePciExpressLib.inf
+{PciExpressLib}
+c:\bios\fsp\kein2\MdePkg\Library\BasePciLibPciExpress\BasePciLibPciExpress.inf
+{PciLib}
+c:\bios\fsp\kein2\SkylakeFspPkg\Library\AcpiTimerLib\AcpiTimerLib.inf
+{TimerLib}
+c:\bios\fsp\kein2\MdePkg\Library\BaseDebugPrintErrorLevelLib\BaseDebugPrintErrorLevelLib.inf
+{DebugPrintErrorLevelLib}
+c:\bios\fsp\kein2\MdePkg\Library\BasePrintLib\BasePrintLib.inf
+{PrintLib}
+c:\bios\fsp\kein2\SkylakeFspPkg\Library\SerialPortLib\SerialPortLib.inf
+{SerialPortLib}
+c:\bios\fsp\kein2\MdePkg\Library\BaseDebugLibSerialPort\BaseDebugLibSerialPort.inf
+{DebugLib:  C = BaseDebugLibSerialPortConstructor}
+c:\bios\fsp\kein2\SkylakeSiPkg\Library\MmPciBaseLib\MmPciBaseLib.inf
+{MmPciBaseLib}
+c:\bios\fsp\kein2\SkylakeSiPkg\Pch\Library\PchPlatformLib\PchPlatformLib.inf
+{PchPlatformLib}
+c:\bios\fsp\kein2\SkylakeSiPkg\Cpu\Library\CpuPlatformLib\CpuPlatformLib.inf
+{CpuPlatformLib}
+c:\bios\fsp\kein2\MdePkg\Library\PeimEntryPoint\PeimEntryPoint.inf
+{PeimEntryPoint}
+c:\bios\fsp\kein2\MdePkg\Library\BasePostCodeLibDebug\BasePostCodeLibDebug.inf
+{PostCodeLib}
+c:\bios\fsp\kein2\MdePkg\Library\PeiHobLib\PeiHobLib.inf
+{HobLib}
+c:\bios\fsp\kein2\SkylakeSiPkg\Cpu\Library\OverclockingLib\OverclockingLib.inf
+{OverclockingLib}
+c:\bios\fsp\kein2\SkylakeSiPkg\RapidStart\SampleCode\Library\RapidStartCommonLib\RapidStartCommonLib.inf
+{RapidStartCommonLib}
+<---------------------------------------------------------------------------------------------------------------------->
+>----------------------------------------------------------------------------------------------------------------------<
+Final Dependency Expression (DEPEX) Instructions
+  PUSH gSaPlatformPolicyPpiGuid
+  PUSH gPchInitPpiGuid
+  PUSH gEfiPeiStallPpiGuid
+  PUSH gPeiCpuPlatformPolicyPpiGuid
+  PUSH gPchMeUmaPpiGuid
+  PUSH gSaPolicyUpdatePpiGuid
+  PUSH giFeatureFlagPpiGuid
+  PUSH gEfiPeiPcdPpiGuid
+  AND
+  AND
+  AND
+  AND
+  AND
+  AND
+  AND
+  END
+------------------------------------------------------------------------------------------------------------------------
+Dependency Expression (DEPEX) from INF
+(gSaPlatformPolicyPpiGuid AND gPchInitPpiGuid AND gEfiPeiStallPpiGuid AND gPeiCpuPlatformPolicyPpiGuid AND
+gPchMeUmaPpiGuid AND gSaPolicyUpdatePpiGuid AND giFeatureFlagPpiGuid) AND (gEfiPeiPcdPpiGuid)
+------------------------------------------------------------------------------------------------------------------------
+From Module INF:  gSaPlatformPolicyPpiGuid AND gPchInitPpiGuid AND gEfiPeiStallPpiGuid AND gPeiCpuPlatformPolicyPpiGuid
+AND gPchMeUmaPpiGuid AND gSaPolicyUpdatePpiGuid AND giFeatureFlagPpiGuid
+From Library INF: (gEfiPeiPcdPpiGuid)
+<---------------------------------------------------------------------------------------------------------------------->
+>----------------------------------------------------------------------------------------------------------------------<
+Build Flags
+Tool Chain Tag: VS2008x86
+------------------------------------------------------------------------------------------------------------------------
+SLINK_FLAGS =  /NOLOGO /LTCG
+------------------------------------------------------------------------------------------------------------------------
+DLINK_FLAGS =  /NOLOGO /NODEFAULTLIB /IGNORE:4001 /OPT:REF /OPT:ICF=10 /MAP /ALIGN:32 /SECTION:.xdata,D
+/SECTION:.pdata,D /MACHINE:X86 /LTCG /DLL /ENTRY:$(IMAGE_ENTRY_POINT) /SUBSYSTEM:EFI_BOOT_SERVICE_DRIVER /SAFESEH:NO
+/BASE:0 /DRIVER /DEBUG
+------------------------------------------------------------------------------------------------------------------------
+CC_FLAGS =  /nologo /c /WX /GS- /W4 /Gs32768 /D UNICODE /O1ib2 /GL /FIAutoGen.h /EHs-c- /GR- /GF /Gy /Zi /Gm /wd4819 /D
+FSP
+<---------------------------------------------------------------------------------------------------------------------->
+>----------------------------------------------------------------------------------------------------------------------<
+Fixed Address Prediction
+*I  Image Loading Address
+*E  Entry Point Address
+*N  Notification Function Address
+*F  Flash Address
+*M  Memory Address
+*S  SMM RAM Offset
+TOM Top of Memory
+Type Address           Name
+------------------------------------------------------------------------------------------------------------------------
+*IF  0x00fff790a0      (Image Base)
+*EF  0x00fff79168      _ModuleEntryPoint
+<======================================================================================================================>
+
+>======================================================================================================================<
+Module Summary
+Module Name:          PlatformEarlyInit
+Module INF Path:      SkylakeFspPkg\PlatformEarlyInit\PlatformEarlyInit.inf
+File GUID:            9618C0DC-50A4-496c-994F-7241F282ED01
+Size:                 0x5860 (22.09K)
+Build Time Stamp:     1969-12-31 16:00:00
+Driver Type:          0x6 (PEIM)
+========================================================================================================================
+>----------------------------------------------------------------------------------------------------------------------<
+PCD
+------------------------------------------------------------------------------------------------------------------------
+gEfiMdePkgTokenSpaceGuid
+    PcdVerifyNodeInList                      :   FLAG  (BOOLEAN) = 0                     
+    PcdMaximumLinkedListLength               :  FIXED   (UINT32) = 1000000               
+    PcdMaximumAsciiStringLength              :  FIXED   (UINT32) = 1000000               
+    PcdMaximumUnicodeStringLength            :  FIXED   (UINT32) = 1000000               
+    PcdDebugClearMemoryValue                 :  FIXED    (UINT8) = 0xAF                  
+ *P PcdDebugPropertyMask                     :  FIXED    (UINT8) = 0x27                  
+                                                     DEC DEFAULT = 0
+    PcdPciExpressBaseAddress                 :  PATCH   (UINT64) = 0xE0000000            
+ *P PcdDebugPrintErrorLevel                  :  PATCH   (UINT32) = 0x80000042            
+                                                     DEC DEFAULT = 0x80000000
+gCommonFspPkgTokenSpaceGuid
+    PcdFspReservedMemoryLength               : DYNVPD   (UINT32) = 0x00100000            
+                                       0x0010
+ *P PcdGlobalDataPointerAddress              :  FIXED   (UINT32) = 0xFED00148            
+                                                     DEC DEFAULT = 0xFED00108
+    PcdTemporaryRamBase                      :  FIXED   (UINT32) = 0xFEF00000            
+ *P PcdTemporaryRamSize                      :  FIXED   (UINT32) = 0x00040000            
+                                                     DEC DEFAULT = 0x2000
+ *P PcdFspTemporaryRamSize                   :  FIXED   (UINT32) = 0x0003C000            
+                                                     DEC DEFAULT = 0x1000
+gLavaCanyonFspPkgTokenSpaceGuid
+    PcdVpdRegionSign                         : DYNVPD   (UINT64) = 0x534450565F425346    
+                                       0x0000
+    PcdImageRevision                         : DYNVPD   (UINT32) = 0x00000001            
+                                       0x0008
+    PcdStatusCodeUseIsaSerial                :   FLAG  (BOOLEAN) = 1                     
+    PcdSerialRegisterBase                    :   FLAG   (UINT64) = 0x3f8                 
+    SerialPortEnable                         :  FIXED  (BOOLEAN) = 1                     
+<---------------------------------------------------------------------------------------------------------------------->
+>----------------------------------------------------------------------------------------------------------------------<
+Library
+------------------------------------------------------------------------------------------------------------------------
+c:\bios\fsp\kein2\MdePkg\Library\PeiMemoryAllocationLib\PeiMemoryAllocationLib.inf
+{MemoryAllocationLib}
+c:\bios\fsp\kein2\MdePkg\Library\PeiServicesTablePointerLibIdt\PeiServicesTablePointerLibIdt.inf
+{PeiServicesTablePointerLib}
+c:\bios\fsp\kein2\MdePkg\Library\PeiPcdLib\PeiPcdLib.inf
+{PcdLib:  Depex = gEfiPeiPcdPpiGuid }
+c:\bios\fsp\kein2\MdePkg\Library\PeiServicesLib\PeiServicesLib.inf
+{PeiServicesLib}
+c:\bios\fsp\kein2\MdePkg\Library\BaseMemoryLibRepStr\BaseMemoryLibRepStr.inf
+{BaseMemoryLib}
+c:\bios\fsp\kein2\MdePkg\Library\BaseLib\BaseLib.inf
+{BaseLib}
+c:\bios\fsp\kein2\MdePkg\Library\BaseIoLibIntrinsic\BaseIoLibIntrinsic.inf
+{IoLib}
+c:\bios\fsp\kein2\MdePkg\Library\BasePciExpressLib\BasePciExpressLib.inf
+{PciExpressLib}
+c:\bios\fsp\kein2\MdePkg\Library\BasePciLibPciExpress\BasePciLibPciExpress.inf
+{PciLib}
+c:\bios\fsp\kein2\SkylakeFspPkg\Library\AcpiTimerLib\AcpiTimerLib.inf
+{TimerLib}
+c:\bios\fsp\kein2\MdePkg\Library\BaseDebugPrintErrorLevelLib\BaseDebugPrintErrorLevelLib.inf
+{DebugPrintErrorLevelLib}
+c:\bios\fsp\kein2\MdePkg\Library\BasePrintLib\BasePrintLib.inf
+{PrintLib}
+c:\bios\fsp\kein2\SkylakeFspPkg\Library\SerialPortLib\SerialPortLib.inf
+{SerialPortLib}
+c:\bios\fsp\kein2\MdePkg\Library\BaseDebugLibSerialPort\BaseDebugLibSerialPort.inf
+{DebugLib:  C = BaseDebugLibSerialPortConstructor}
+c:\bios\fsp\kein2\SkylakeSiPkg\Library\MmPciBaseLib\MmPciBaseLib.inf
+{MmPciBaseLib}
+c:\bios\fsp\kein2\SkylakeSiPkg\Pch\Library\PchPlatformLib\PchPlatformLib.inf
+{PchPlatformLib}
+c:\bios\fsp\kein2\MdePkg\Library\PeimEntryPoint\PeimEntryPoint.inf
+{PeimEntryPoint}
+c:\bios\fsp\kein2\MdePkg\Library\PeiHobLib\PeiHobLib.inf
+{HobLib}
+c:\bios\fsp\kein2\CommonFspPkg\Library\CacheLib\CacheLib.inf
+{CacheLib}
+c:\bios\fsp\kein2\CommonFspPkg\Library\FspCommonLib\FspCommonLib.inf
+{FspCommonLib}
+c:\bios\fsp\kein2\CommonFspPkg\Library\FspPlatformLib\FspPlatformLib.inf
+{FspPlatformLib}
+c:\bios\fsp\kein2\SkylakeSiPkg\Cpu\Library\CpuPlatformLib\CpuPlatformLib.inf
+{CpuPlatformLib}
+<---------------------------------------------------------------------------------------------------------------------->
+>----------------------------------------------------------------------------------------------------------------------<
+Final Dependency Expression (DEPEX) Instructions
+  PUSH gEfiPeiPcdPpiGuid
+  END
+------------------------------------------------------------------------------------------------------------------------
+Dependency Expression (DEPEX) from INF
+(TRUE) AND (gEfiPeiPcdPpiGuid)
+------------------------------------------------------------------------------------------------------------------------
+From Module INF:  TRUE
+From Library INF: (gEfiPeiPcdPpiGuid)
+<---------------------------------------------------------------------------------------------------------------------->
+>----------------------------------------------------------------------------------------------------------------------<
+Build Flags
+Tool Chain Tag: VS2008x86
+------------------------------------------------------------------------------------------------------------------------
+SLINK_FLAGS =  /NOLOGO /LTCG
+------------------------------------------------------------------------------------------------------------------------
+DLINK_FLAGS =  /NOLOGO /NODEFAULTLIB /IGNORE:4001 /OPT:REF /OPT:ICF=10 /MAP /ALIGN:32 /SECTION:.xdata,D
+/SECTION:.pdata,D /MACHINE:X86 /LTCG /DLL /ENTRY:$(IMAGE_ENTRY_POINT) /SUBSYSTEM:EFI_BOOT_SERVICE_DRIVER /SAFESEH:NO
+/BASE:0 /DRIVER /DEBUG
+------------------------------------------------------------------------------------------------------------------------
+CC_FLAGS =  /nologo /c /WX /GS- /W4 /Gs32768 /D UNICODE /O1ib2 /GL /FIAutoGen.h /EHs-c- /GR- /GF /Gy /Zi /Gm
+/FI$(BUILD_DIR)\FV\UpdHeader.h /wd4819 /D FSP
+<---------------------------------------------------------------------------------------------------------------------->
+>----------------------------------------------------------------------------------------------------------------------<
+Fixed Address Prediction
+*I  Image Loading Address
+*E  Entry Point Address
+*N  Notification Function Address
+*F  Flash Address
+*M  Memory Address
+*S  SMM RAM Offset
+TOM Top of Memory
+Type Address           Name
+------------------------------------------------------------------------------------------------------------------------
+*IF  0x00fff85644      (Image Base)
+*EF  0x00fff85714      _ModuleEntryPoint
+<======================================================================================================================>
+
+>======================================================================================================================<
+Module Summary
+Module Name:          DxeIpl
+Module INF Path:      CommonFspPkg\DxeIpl\DxeIpl.inf
+File GUID:            86D70125-BAA3-4296-A62F-602BEBBB9081
+Size:                 0x2F00 (11.75K)
+Build Time Stamp:     1969-12-31 16:00:00
+Driver Type:          0x6 (PEIM)
+========================================================================================================================
+>----------------------------------------------------------------------------------------------------------------------<
+PCD
+------------------------------------------------------------------------------------------------------------------------
+gEfiMdePkgTokenSpaceGuid
+    PcdVerifyNodeInList                      :   FLAG  (BOOLEAN) = 0                     
+    PcdMaximumLinkedListLength               :  FIXED   (UINT32) = 1000000               
+    PcdMaximumAsciiStringLength              :  FIXED   (UINT32) = 1000000               
+    PcdMaximumUnicodeStringLength            :  FIXED   (UINT32) = 1000000               
+    PcdDebugClearMemoryValue                 :  FIXED    (UINT8) = 0xAF                  
+ *P PcdDebugPropertyMask                     :  FIXED    (UINT8) = 0x27                  
+                                                     DEC DEFAULT = 0
+    PcdReportStatusCodePropertyMask          :  FIXED    (UINT8) = 0                     
+    PcdPciExpressBaseAddress                 :  PATCH   (UINT64) = 0xE0000000            
+ *P PcdDebugPrintErrorLevel                  :  PATCH   (UINT32) = 0x80000042            
+                                                     DEC DEFAULT = 0x80000000
+gCommonFspPkgTokenSpaceGuid
+ *P PcdGlobalDataPointerAddress              :  FIXED   (UINT32) = 0xFED00148            
+                                                     DEC DEFAULT = 0xFED00108
+gLavaCanyonFspPkgTokenSpaceGuid
+    PcdStatusCodeUseIsaSerial                :   FLAG  (BOOLEAN) = 1                     
+    PcdSerialRegisterBase                    :   FLAG   (UINT64) = 0x3f8                 
+    SerialPortEnable                         :  FIXED  (BOOLEAN) = 1                     
+<---------------------------------------------------------------------------------------------------------------------->
+>----------------------------------------------------------------------------------------------------------------------<
+Library
+------------------------------------------------------------------------------------------------------------------------
+c:\bios\fsp\kein2\MdePkg\Library\PeiServicesTablePointerLibIdt\PeiServicesTablePointerLibIdt.inf
+{PeiServicesTablePointerLib}
+c:\bios\fsp\kein2\MdePkg\Library\BaseLib\BaseLib.inf
+{BaseLib}
+c:\bios\fsp\kein2\MdePkg\Library\PeiServicesLib\PeiServicesLib.inf
+{PeiServicesLib}
+c:\bios\fsp\kein2\MdePkg\Library\BaseMemoryLibRepStr\BaseMemoryLibRepStr.inf
+{BaseMemoryLib}
+c:\bios\fsp\kein2\MdePkg\Library\PeiMemoryAllocationLib\PeiMemoryAllocationLib.inf
+{MemoryAllocationLib}
+c:\bios\fsp\kein2\MdePkg\Library\PeiPcdLib\PeiPcdLib.inf
+{PcdLib:  Depex = gEfiPeiPcdPpiGuid }
+c:\bios\fsp\kein2\MdePkg\Library\BaseIoLibIntrinsic\BaseIoLibIntrinsic.inf
+{IoLib}
+c:\bios\fsp\kein2\MdePkg\Library\BasePciExpressLib\BasePciExpressLib.inf
+{PciExpressLib}
+c:\bios\fsp\kein2\MdePkg\Library\BasePciLibPciExpress\BasePciLibPciExpress.inf
+{PciLib}
+c:\bios\fsp\kein2\SkylakeFspPkg\Library\AcpiTimerLib\AcpiTimerLib.inf
+{TimerLib}
+c:\bios\fsp\kein2\MdePkg\Library\BaseDebugPrintErrorLevelLib\BaseDebugPrintErrorLevelLib.inf
+{DebugPrintErrorLevelLib}
+c:\bios\fsp\kein2\MdePkg\Library\BasePrintLib\BasePrintLib.inf
+{PrintLib}
+c:\bios\fsp\kein2\SkylakeFspPkg\Library\SerialPortLib\SerialPortLib.inf
+{SerialPortLib}
+c:\bios\fsp\kein2\MdePkg\Library\BaseDebugLibSerialPort\BaseDebugLibSerialPort.inf
+{DebugLib:  C = BaseDebugLibSerialPortConstructor}
+c:\bios\fsp\kein2\MdeModulePkg\Library\OemHookStatusCodeLibNull\OemHookStatusCodeLibNull.inf
+{OemHookStatusCodeLib}
+c:\bios\fsp\kein2\MdePkg\Library\BaseUefiDecompressLib\BaseUefiDecompressLib.inf
+{UefiDecompressLib}
+c:\bios\fsp\kein2\MdeModulePkg\Library\PeiReportStatusCodeLib\PeiReportStatusCodeLib.inf
+{ReportStatusCodeLib}
+c:\bios\fsp\kein2\MdePkg\Library\PeiHobLib\PeiHobLib.inf
+{HobLib}
+c:\bios\fsp\kein2\MdePkg\Library\PeimEntryPoint\PeimEntryPoint.inf
+{PeimEntryPoint}
+c:\bios\fsp\kein2\CommonFspPkg\Library\SwitchStackLib\SwitchStackLib.inf
+{SwitchStackLib}
+c:\bios\fsp\kein2\CommonFspPkg\Library\FspCommonLib\FspCommonLib.inf
+{FspCommonLib}
+<---------------------------------------------------------------------------------------------------------------------->
+>----------------------------------------------------------------------------------------------------------------------<
+Final Dependency Expression (DEPEX) Instructions
+  PUSH gEfiPeiMemoryDiscoveredPpiGuid
+  PUSH gEfiPeiLoadFilePpiGuid
+  PUSH gEfiPeiPcdPpiGuid
+  AND
+  AND
+  END
+------------------------------------------------------------------------------------------------------------------------
+Dependency Expression (DEPEX) from INF
+(gEfiPeiMemoryDiscoveredPpiGuid AND gEfiPeiLoadFilePpiGuid) AND (gEfiPeiPcdPpiGuid)
+------------------------------------------------------------------------------------------------------------------------
+From Module INF:  gEfiPeiMemoryDiscoveredPpiGuid AND gEfiPeiLoadFilePpiGuid
+From Library INF: (gEfiPeiPcdPpiGuid)
+<---------------------------------------------------------------------------------------------------------------------->
+>----------------------------------------------------------------------------------------------------------------------<
+Build Flags
+Tool Chain Tag: VS2008x86
+------------------------------------------------------------------------------------------------------------------------
+SLINK_FLAGS =  /NOLOGO /LTCG
+------------------------------------------------------------------------------------------------------------------------
+DLINK_FLAGS =  /NOLOGO /NODEFAULTLIB /IGNORE:4001 /OPT:REF /OPT:ICF=10 /MAP /ALIGN:32 /SECTION:.xdata,D
+/SECTION:.pdata,D /MACHINE:X86 /LTCG /DLL /ENTRY:$(IMAGE_ENTRY_POINT) /SUBSYSTEM:EFI_BOOT_SERVICE_DRIVER /SAFESEH:NO
+/BASE:0 /DRIVER /DEBUG
+------------------------------------------------------------------------------------------------------------------------
+CC_FLAGS =  /nologo /c /WX /GS- /W4 /Gs32768 /D UNICODE /O1ib2 /GL /FIAutoGen.h /EHs-c- /GR- /GF /Gy /Zi /Gm /wd4819 /D
+FSP
+<---------------------------------------------------------------------------------------------------------------------->
+>----------------------------------------------------------------------------------------------------------------------<
+Fixed Address Prediction
+*I  Image Loading Address
+*E  Entry Point Address
+*N  Notification Function Address
+*F  Flash Address
+*M  Memory Address
+*S  SMM RAM Offset
+TOM Top of Memory
+Type Address           Name
+------------------------------------------------------------------------------------------------------------------------
+*IF  0x00fff8ada0      (Image Base)
+*EF  0x00fff8ae70      _ModuleEntryPoint
+<======================================================================================================================>
+
+>======================================================================================================================<
+Module Summary
+Module Name:          PlatformLateInit
+Module INF Path:      SkylakeFspPkg\PlatformLateInit\PlatformLateInit.inf
+File GUID:            47EA2673-2533-4c07-AABA-69CE5A7C5D35
+Size:                 0x3200 (12.50K)
+Build Time Stamp:     1969-12-31 16:00:00
+Driver Type:          0x6 (PEIM)
+========================================================================================================================
+>----------------------------------------------------------------------------------------------------------------------<
+PCD
+------------------------------------------------------------------------------------------------------------------------
+gEfiMdePkgTokenSpaceGuid
+    PcdVerifyNodeInList                      :   FLAG  (BOOLEAN) = 0                     
+    PcdMaximumLinkedListLength               :  FIXED   (UINT32) = 1000000               
+    PcdMaximumAsciiStringLength              :  FIXED   (UINT32) = 1000000               
+    PcdMaximumUnicodeStringLength            :  FIXED   (UINT32) = 1000000               
+    PcdDebugClearMemoryValue                 :  FIXED    (UINT8) = 0xAF                  
+ *P PcdDebugPropertyMask                     :  FIXED    (UINT8) = 0x27                  
+                                                     DEC DEFAULT = 0
+    PcdPciExpressBaseAddress                 :  PATCH   (UINT64) = 0xE0000000            
+ *P PcdDebugPrintErrorLevel                  :  PATCH   (UINT32) = 0x80000042            
+                                                     DEC DEFAULT = 0x80000000
+gCommonFspPkgTokenSpaceGuid
+ *P PcdGlobalDataPointerAddress              :  FIXED   (UINT32) = 0xFED00148            
+                                                     DEC DEFAULT = 0xFED00108
+    PcdTemporaryRamBase                      :  FIXED   (UINT32) = 0xFEF00000            
+ *P PcdTemporaryRamSize                      :  FIXED   (UINT32) = 0x00040000            
+                                                     DEC DEFAULT = 0x2000
+ *P PcdFspTemporaryRamSize                   :  FIXED   (UINT32) = 0x0003C000            
+                                                     DEC DEFAULT = 0x1000
+    PcdBootLoaderEntry                       :  FIXED   (UINT32) = 0xFFFFFFE4            
+gLavaCanyonFspPkgTokenSpaceGuid
+    PcdUpdRegionOffset                       : DYNVPD   (UINT32) = 0x00000000            
+                                       0x000C
+    PcdStatusCodeUseIsaSerial                :   FLAG  (BOOLEAN) = 1                     
+    PcdSerialRegisterBase                    :   FLAG   (UINT64) = 0x3f8                 
+    SerialPortEnable                         :  FIXED  (BOOLEAN) = 1                     
+<---------------------------------------------------------------------------------------------------------------------->
+>----------------------------------------------------------------------------------------------------------------------<
+Library
+------------------------------------------------------------------------------------------------------------------------
+c:\bios\fsp\kein2\MdePkg\Library\PeiMemoryAllocationLib\PeiMemoryAllocationLib.inf
+{MemoryAllocationLib}
+c:\bios\fsp\kein2\MdePkg\Library\PeiServicesTablePointerLibIdt\PeiServicesTablePointerLibIdt.inf
+{PeiServicesTablePointerLib}
+c:\bios\fsp\kein2\MdePkg\Library\PeiServicesLib\PeiServicesLib.inf
+{PeiServicesLib}
+c:\bios\fsp\kein2\MdePkg\Library\PeiPcdLib\PeiPcdLib.inf
+{PcdLib:  Depex = gEfiPeiPcdPpiGuid }
+c:\bios\fsp\kein2\MdePkg\Library\BaseMemoryLibRepStr\BaseMemoryLibRepStr.inf
+{BaseMemoryLib}
+c:\bios\fsp\kein2\MdePkg\Library\BaseLib\BaseLib.inf
+{BaseLib}
+c:\bios\fsp\kein2\MdePkg\Library\BaseIoLibIntrinsic\BaseIoLibIntrinsic.inf
+{IoLib}
+c:\bios\fsp\kein2\MdePkg\Library\BasePciExpressLib\BasePciExpressLib.inf
+{PciExpressLib}
+c:\bios\fsp\kein2\MdePkg\Library\BasePciLibPciExpress\BasePciLibPciExpress.inf
+{PciLib}
+c:\bios\fsp\kein2\SkylakeFspPkg\Library\AcpiTimerLib\AcpiTimerLib.inf
+{TimerLib}
+c:\bios\fsp\kein2\MdePkg\Library\BaseDebugPrintErrorLevelLib\BaseDebugPrintErrorLevelLib.inf
+{DebugPrintErrorLevelLib}
+c:\bios\fsp\kein2\MdePkg\Library\BasePrintLib\BasePrintLib.inf
+{PrintLib}
+c:\bios\fsp\kein2\SkylakeFspPkg\Library\SerialPortLib\SerialPortLib.inf
+{SerialPortLib}
+c:\bios\fsp\kein2\MdePkg\Library\BaseDebugLibSerialPort\BaseDebugLibSerialPort.inf
+{DebugLib:  C = BaseDebugLibSerialPortConstructor}
+c:\bios\fsp\kein2\SkylakeSiPkg\Library\MmPciBaseLib\MmPciBaseLib.inf
+{MmPciBaseLib}
+c:\bios\fsp\kein2\SkylakeSiPkg\Pch\Library\PchPlatformLib\PchPlatformLib.inf
+{PchPlatformLib}
+c:\bios\fsp\kein2\MdePkg\Library\PeimEntryPoint\PeimEntryPoint.inf
+{PeimEntryPoint}
+c:\bios\fsp\kein2\MdePkg\Library\PeiHobLib\PeiHobLib.inf
+{HobLib}
+c:\bios\fsp\kein2\CommonFspPkg\Library\SwitchStackLib\SwitchStackLib.inf
+{SwitchStackLib}
+c:\bios\fsp\kein2\CommonFspPkg\Library\FspCommonLib\FspCommonLib.inf
+{FspCommonLib}
+c:\bios\fsp\kein2\CommonFspPkg\Library\FspPlatformLib\FspPlatformLib.inf
+{FspPlatformLib}
+c:\bios\fsp\kein2\SkylakeSiPkg\Cpu\Library\CpuPlatformLib\CpuPlatformLib.inf
+{CpuPlatformLib}
+<---------------------------------------------------------------------------------------------------------------------->
+>----------------------------------------------------------------------------------------------------------------------<
+Final Dependency Expression (DEPEX) Instructions
+  PUSH gEfiPeiPcdPpiGuid
+  END
+------------------------------------------------------------------------------------------------------------------------
+Dependency Expression (DEPEX) from INF
+(TRUE) AND (gEfiPeiPcdPpiGuid)
+------------------------------------------------------------------------------------------------------------------------
+From Module INF:  TRUE
+From Library INF: (gEfiPeiPcdPpiGuid)
+<---------------------------------------------------------------------------------------------------------------------->
+>----------------------------------------------------------------------------------------------------------------------<
+Build Flags
+Tool Chain Tag: VS2008x86
+------------------------------------------------------------------------------------------------------------------------
+SLINK_FLAGS =  /NOLOGO /LTCG
+------------------------------------------------------------------------------------------------------------------------
+DLINK_FLAGS =  /NOLOGO /NODEFAULTLIB /IGNORE:4001 /OPT:REF /OPT:ICF=10 /MAP /ALIGN:32 /SECTION:.xdata,D
+/SECTION:.pdata,D /MACHINE:X86 /LTCG /DLL /ENTRY:$(IMAGE_ENTRY_POINT) /SUBSYSTEM:EFI_BOOT_SERVICE_DRIVER /SAFESEH:NO
+/BASE:0 /DRIVER /DEBUG
+------------------------------------------------------------------------------------------------------------------------
+CC_FLAGS =  /nologo /c /WX /GS- /W4 /Gs32768 /D UNICODE /O1ib2 /GL /FIAutoGen.h /EHs-c- /GR- /GF /Gy /Zi /Gm
+/FI$(BUILD_DIR)\FV\UpdHeader.h /wd4819 /D FSP
+<---------------------------------------------------------------------------------------------------------------------->
+<======================================================================================================================>
+

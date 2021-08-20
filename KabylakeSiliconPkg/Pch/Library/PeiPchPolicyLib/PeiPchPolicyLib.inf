@@ -1,0 +1,116 @@
+## @file
+# Component description file for the PeiPchPolicy libbrary.
+#
+# @copyright
+#  INTEL CONFIDENTIAL
+#  Copyright 2014 - 2019 Intel Corporation.
+#
+#  The source code contained or described herein and all documents related to the
+#  source code ("Material") are owned by Intel Corporation or its suppliers or
+#  licensors. Title to the Material remains with Intel Corporation or its suppliers
+#  and licensors. The Material may contain trade secrets and proprietary and
+#  confidential information of Intel Corporation and its suppliers and licensors,
+#  and is protected by worldwide copyright and trade secret laws and treaty
+#  provisions. No part of the Material may be used, copied, reproduced, modified,
+#  published, uploaded, posted, transmitted, distributed, or disclosed in any way
+#  without Intel's prior express written permission.
+#
+#  No license under any patent, copyright, trade secret or other intellectual
+#  property right is granted to or conferred upon you by disclosure or delivery
+#  of the Materials, either expressly, by implication, inducement, estoppel or
+#  otherwise. Any license under such intellectual property rights must be
+#  express and approved by Intel in writing.
+#
+#  Unless otherwise agreed by Intel in writing, you may not remove or alter
+#  this notice or any other notice embedded in Materials by Intel or
+#  Intel's suppliers or licensors in any way.
+#
+#  This file contains an 'Intel Peripheral Driver' and is uniquely identified as
+#  "Intel Reference Module" and is licensed for Intel CPUs and chipsets under
+#  the terms of your license agreement with Intel or your vendor. This file may
+#  be modified by the user, subject to additional terms of the license agreement.
+#
+# @par Specification Reference:
+#
+##
+
+
+[Defines]
+INF_VERSION = 0x00010017
+BASE_NAME = PeiPchPolicyLib
+FILE_GUID = BB1AC992-B2CA-4744-84B7-915C185576C5
+VERSION_STRING = 1.0
+MODULE_TYPE = PEIM
+LIBRARY_CLASS = PchPolicyLib
+
+
+[LibraryClasses]
+DebugLib
+IoLib
+PcdLib
+PeiServicesLib
+BaseMemoryLib
+MemoryAllocationLib
+PchInfoLib
+ConfigBlockLib
+SiConfigBlockLib
+CpuPlatformLib
+
+[Packages]
+MdePkg/MdePkg.dec
+ClientSiliconPkg/ClientSiliconPkg.dec
+KabylakeSiliconPkg/SiPkg.dec
+
+
+[Pcd]
+gSiPkgTokenSpaceGuid.PcdAcpiBaseAddress
+gSiPkgTokenSpaceGuid.PcdSmbusBaseAddress
+gSiPkgTokenSpaceGuid.PcdSerialIoUartDebugEnable
+gSiPkgTokenSpaceGuid.PcdSerialIoUartNumber
+
+
+[Sources]
+PeiPchPolicyLib.c
+PeiPchPolicyLibrary.h
+PchPrintPolicy.c
+PchSamplePolicyLib.c
+PeiPchPreMemPolicyLib.c
+PchPreMemPrintPolicy.c
+PchSamplePreMemPolicyLib.c
+
+
+[Guids]
+gPchGeneralConfigGuid              ## CONSUMES
+gPcieRpConfigGuid                  ## CONSUMES
+gSataConfigGuid                    ## CONSUMES
+gIoApicConfigGuid                  ## CONSUMES
+gCio2ConfigGuid                    ## CONSUMES
+gDmiConfigGuid                     ## CONSUMES
+gFlashProtectionConfigGuid         ## CONSUMES
+gHdAudioConfigGuid                 ## CONSUMES
+gInterruptConfigGuid               ## CONSUMES
+gIshConfigGuid                     ## CONSUMES
+gLanConfigGuid                     ## CONSUMES
+gLockDownConfigGuid                ## CONSUMES
+gP2sbConfigGuid                    ## CONSUMES
+gPmConfigGuid                      ## CONSUMES
+gPort61ConfigGuid                  ## CONSUMES
+gScsConfigGuid                     ## CONSUMES
+gSerialIoConfigGuid                ## CONSUMES
+gSerialIrqConfigGuid               ## CONSUMES
+gSpiConfigGuid                     ## CONSUMES
+gEspiConfigGuid                    ## CONSUMES
+gThermalConfigGuid                 ## CONSUMES
+gUsbConfigGuid                     ## CONSUMES
+gPchGeneralPreMemConfigGuid        ## COMSUMES
+gDciPreMemConfigGuid               ## CONSUMES
+gWatchDogPreMemConfigGuid          ## CONSUMES
+gTraceHubPreMemConfigGuid          ## CONSUMES
+gHpetPreMemConfigGuid              ## CONSUMES
+gSmbusPreMemConfigGuid             ## CONSUMES
+gLpcPreMemConfigGuid               ## CONSUMES
+gHsioPciePreMemConfigGuid          ## CONSUMES
+gHsioSataPreMemConfigGuid          ## CONSUMES
+gHsioPreMemConfigGuid              ## CONSUMES
+gPcieRpPreMemConfigGuid            ## CONSUMES
+gHybridStorageConfigGuid           ## CONSUMES

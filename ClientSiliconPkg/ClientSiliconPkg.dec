@@ -1,0 +1,48 @@
+## @file
+# This Package provides all definitions, library classes and libraries instances.
+#
+# Copyright (c) 2015 - 2016, Intel Corporation. All rights reserved.<BR>
+#
+# This program and the accompanying materials are licensed and made available under
+# the terms and conditions of the BSD License which accompanies this distribution.
+# The full text of the license may be found at
+# http://opensource.org/licenses/bsd-license.php
+#
+# THE PROGRAM IS DISTRIBUTED UNDER THE BSD LICENSE ON AN "AS IS" BASIS,
+# WITHOUT WARRANTIES OR REPRESENTATIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED.
+#
+##
+
+
+[Defines]
+DEC_SPECIFICATION = 0x00010017
+PACKAGE_NAME = ClientSiliconPkg
+PACKAGE_VERSION = 0.1
+PACKAGE_GUID = 8423AB46-C89A-47af-A0D3-F29E19FEBF4D
+
+
+[Includes]
+Include
+SampleCode/IntelFrameworkPkg/Include
+
+[Guids]
+gClientSiliconPkgTokenSpaceGuid    =  {0xddf913cf, 0x8c2e, 0x449d, {0x8f, 0x6b, 0xd6, 0x44, 0xd2, 0xb6, 0x22, 0xf6}}
+gSmbiosFirmwareVersionInfoHobGuid  =  {0x947c974a, 0xc5aa, 0x48a2, {0xa4, 0x77, 0x1a, 0x4c, 0x9f, 0x52, 0xe7, 0x82}}
+gSmbiosProcessorInfoHobGuid        =  {0xe6d73d92, 0xff56, 0x4146, {0xaf, 0xac, 0x1c, 0x18, 0x81, 0x7d, 0x68, 0x71}}
+gSmbiosCacheInfoHobGuid            =  {0xd805b74e, 0x1460, 0x4755, {0xbb, 0x36, 0x1e, 0x8c, 0x8a, 0xd6, 0x78, 0xd7}}
+##
+## IntelFrameworkPkg
+##
+gEfiSmmPeiSmramMemoryReserveGuid   =  {0x6dadf1d1, 0xd4cc, 0x4910, {0xbb, 0x6e, 0x82, 0xb1, 0xfd, 0x80, 0xff, 0x3d}}
+
+[LibraryClasses]
+## @libraryclass
+## Common
+##
+ConfigBlockLib|Include/Library/ConfigBlockLib.h
+
+[PcdsFixedAtBuild]
+gClientSiliconPkgTokenSpaceGuid.PcdClientSiliconVersionMajor|00|UINT8|0x00000001
+gClientSiliconPkgTokenSpaceGuid.PcdClientSiliconVersionMinor|02|UINT8|0x00000002
+gClientSiliconPkgTokenSpaceGuid.PcdClientSiliconVersionRevision|00|UINT8|0x00000003
+gClientSiliconPkgTokenSpaceGuid.PcdClientSiliconVersionBuild|01|UINT8|0x00000004

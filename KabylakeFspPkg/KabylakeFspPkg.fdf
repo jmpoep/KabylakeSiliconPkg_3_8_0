@@ -1,0 +1,423 @@
+## @file
+#  FDF file of Platform.
+#
+# @copyright
+#  INTEL CONFIDENTIAL
+#  Copyright 2008 - 2019 Intel Corporation.
+#
+#  The source code contained or described herein and all documents related to the
+#  source code ("Material") are owned by Intel Corporation or its suppliers or
+#  licensors. Title to the Material remains with Intel Corporation or its suppliers
+#  and licensors. The Material may contain trade secrets and proprietary and
+#  confidential information of Intel Corporation and its suppliers and licensors,
+#  and is protected by worldwide copyright and trade secret laws and treaty
+#  provisions. No part of the Material may be used, copied, reproduced, modified,
+#  published, uploaded, posted, transmitted, distributed, or disclosed in any way
+#  without Intel's prior express written permission.
+#
+#  No license under any patent, copyright, trade secret or other intellectual
+#  property right is granted to or conferred upon you by disclosure or delivery
+#  of the Materials, either expressly, by implication, inducement, estoppel or
+#  otherwise. Any license under such intellectual property rights must be
+#  express and approved by Intel in writing.
+#
+#  Unless otherwise agreed by Intel in writing, you may not remove or alter
+#  this notice or any other notice embedded in Materials by Intel or
+#  Intel's suppliers or licensors in any way.
+#
+#  This file contains an 'Intel Peripheral Driver' and is uniquely identified as
+#  "Intel Reference Module" and is licensed for Intel CPUs and chipsets under
+#  the terms of your license agreement with Intel or your vendor. This file may
+#  be modified by the user, subject to additional terms of the license agreement.
+#
+# @par Specification
+##
+
+[Defines]
+# Initialize base address of first component of FSP
+!if $(TARGET) == "RELEASE"
+DEFINE FLASH_BASE       = 0xFFF40000
+!else
+DEFINE FLASH_BASE       = 0xFFED0000
+!endif
+
+DEFINE FLASH_BLOCK_SIZE = 0x00001000     #The block size
+
+!if gSiPkgTokenSpaceGuid.PcdSsaFlagEnable == FALSE
+!if ("GCC49" in $(TOOL_CHAIN_TAG)) || ("GCC5" in $(TOOL_CHAIN_TAG))
+#
+# Flash Size for GCC, RELEASE & NON-MMA
+#
+!if $(TARGET) == "RELEASE"
+#============================================================================#
+DEFINE FLASH_SIZE       = 0x0009C000     #The flash size in bytes of the FSP #
+DEFINE FLASH_NUM_BLOCKS = 0x9C           #The number of blocks               #
+#============================================================================#
+#============================================================================#
+SET gKabylakeFspPkgTokenSpaceGuid.PcdFlashFvFsptSize     = 0x00006000        #
+SET gKabylakeFspPkgTokenSpaceGuid.PcdFlashFvFspmSize     = 0x00066000        #
+SET gKabylakeFspPkgTokenSpaceGuid.PcdFlashFvFspsSize     = 0x0002F000        #
+#============================================================================#
+#
+# Flash Size for GCC, DEBUG & NON-MMA
+#
+!else
+#============================================================================#
+DEFINE FLASH_SIZE       = 0x00109000     #The flash size in bytes of the FSP #
+DEFINE FLASH_NUM_BLOCKS = 0x109          #The number of blocks               #
+#============================================================================#
+#============================================================================#
+SET gKabylakeFspPkgTokenSpaceGuid.PcdFlashFvFsptSize     = 0x00007000        #
+SET gKabylakeFspPkgTokenSpaceGuid.PcdFlashFvFspmSize     = 0x000BA000        #
+SET gKabylakeFspPkgTokenSpaceGuid.PcdFlashFvFspsSize     = 0x00048000        #
+#============================================================================#
+!endif
+!else
+#
+# Flash Size for Visual Studio, RELEASE & NON-MMA
+#
+!if $(TARGET) == "RELEASE"
+#============================================================================#
+DEFINE FLASH_SIZE       = 0x00094000     #The flash size in bytes of the FSP #
+DEFINE FLASH_NUM_BLOCKS = 0x94           #The number of blocks               #
+#============================================================================#
+#============================================================================#
+SET gKabylakeFspPkgTokenSpaceGuid.PcdFlashFvFsptSize     = 0x00003000        #
+SET gKabylakeFspPkgTokenSpaceGuid.PcdFlashFvFspmSize     = 0x00063000        #
+SET gKabylakeFspPkgTokenSpaceGuid.PcdFlashFvFspsSize     = 0x0002E000        #
+#============================================================================#
+#
+# Flash Size for Visual Studio, DEBUG & NON-MMA
+#
+!else
+#============================================================================#
+DEFINE FLASH_SIZE       = 0x000FE000     #The flash size in bytes of the FSP #
+DEFINE FLASH_NUM_BLOCKS = 0xFE           #The number of blocks               #
+#============================================================================#
+#============================================================================#
+SET gKabylakeFspPkgTokenSpaceGuid.PcdFlashFvFsptSize     = 0x00006000        #
+SET gKabylakeFspPkgTokenSpaceGuid.PcdFlashFvFspmSize     = 0x000B1000        #
+SET gKabylakeFspPkgTokenSpaceGuid.PcdFlashFvFspsSize     = 0x00047000        #
+#============================================================================#
+!endif
+!endif
+!else
+!if ("GCC49" in $(TOOL_CHAIN_TAG)) || ("GCC5" in $(TOOL_CHAIN_TAG))
+#
+# Flash Size for GCC, RELEASE & MMA
+#
+!if $(TARGET) == "RELEASE"
+#============================================================================#
+DEFINE FLASH_SIZE       = 0x000B6000     #The flash size in bytes of the FSP #
+DEFINE FLASH_NUM_BLOCKS = 0xB6           #The number of blocks               #
+#============================================================================#
+#============================================================================#
+SET gKabylakeFspPkgTokenSpaceGuid.PcdFlashFvFsptSize     = 0x00005000        #
+SET gKabylakeFspPkgTokenSpaceGuid.PcdFlashFvFspmSize     = 0x0008B000        #
+SET gKabylakeFspPkgTokenSpaceGuid.PcdFlashFvFspsSize     = 0x00026000        #
+#============================================================================#
+#
+# Flash Size for GCC, DEBUG & MMA
+#
+!else
+#============================================================================#
+DEFINE FLASH_SIZE       = 0x00124000     #The flash size in bytes of the FSP #
+DEFINE FLASH_NUM_BLOCKS = 0x124          #The number of blocks               #
+#============================================================================#
+#============================================================================#
+SET gKabylakeFspPkgTokenSpaceGuid.PcdFlashFvFsptSize     = 0x00008000        #
+SET gKabylakeFspPkgTokenSpaceGuid.PcdFlashFvFspmSize     = 0x000D7000        #
+SET gKabylakeFspPkgTokenSpaceGuid.PcdFlashFvFspsSize     = 0x00045000        #
+#============================================================================#
+!endif
+!else
+#
+# Flash Size for Visual Studio, RELEASE & MMA
+#
+!if $(TARGET) == "RELEASE"
+#============================================================================#
+DEFINE FLASH_SIZE       = 0x00086000     #The flash size in bytes of the FSP #
+DEFINE FLASH_NUM_BLOCKS = 0x86           #The number of blocks               #
+#============================================================================#
+#============================================================================#
+SET gKabylakeFspPkgTokenSpaceGuid.PcdFlashFvFsptSize     = 0x00003000        #
+SET gKabylakeFspPkgTokenSpaceGuid.PcdFlashFvFspmSize     = 0x00068000        #
+SET gKabylakeFspPkgTokenSpaceGuid.PcdFlashFvFspsSize     = 0x0001B000        #
+#============================================================================#
+#
+# Flash Size for Visual Studio, DEBUG & MMA
+#
+!else
+#============================================================================#
+DEFINE FLASH_SIZE       = 0x000EA000     #The flash size in bytes of the FSP #
+DEFINE FLASH_NUM_BLOCKS = 0xEA           #The number of blocks               #
+#============================================================================#
+#============================================================================#
+SET gKabylakeFspPkgTokenSpaceGuid.PcdFlashFvFsptSize     = 0x00006000        #
+SET gKabylakeFspPkgTokenSpaceGuid.PcdFlashFvFspmSize     = 0x000B4000        #
+SET gKabylakeFspPkgTokenSpaceGuid.PcdFlashFvFspsSize     = 0x00030000        #
+#============================================================================#
+!endif
+!endif
+!endif
+
+################################################################################
+#
+# FD Section
+# The [FD] Section is made up of the definition statements and a
+# description of what goes into  the Flash Device Image.  Each FD section
+# defines one flash "device" image.  A flash device image may be one of
+# the following: Removable media bootable image (like a boot floppy
+# image,) an Option ROM image (that would be "flashed" into an add-in
+# card,) a System "Flash"  image (that would be burned into a system's
+# flash) or an Update ("Capsule") image that will be used to update and
+# existing system flash.
+#
+################################################################################
+[FD.KBLFSP]
+BaseAddress   = $(FLASH_BASE) | gIntelFsp2PkgTokenSpaceGuid.PcdFspAreaBaseAddress
+Size          = $(FLASH_SIZE) | gIntelFsp2PkgTokenSpaceGuid.PcdFspAreaSize
+ErasePolarity = 1
+BlockSize     = $(FLASH_BLOCK_SIZE)
+NumBlocks     = $(FLASH_NUM_BLOCKS)          #The number of blocks for 2Mb FLASH Device.
+
+SET gKabylakeFspPkgTokenSpaceGuid.PcdFlashFvFspBase = $(FLASH_BASE)
+SET gIntelFsp2PkgTokenSpaceGuid.PcdFspBootFirmwareVolumeBase = $(FLASH_BASE) + $(gKabylakeFspPkgTokenSpaceGuid.PcdFlashFvFspsSize)
+
+#FSP-S
+#FSP-S FV offset|FSP-S FV size
+0x00000000|gKabylakeFspPkgTokenSpaceGuid.PcdFlashFvFspsSize
+gKabylakeFspPkgTokenSpaceGuid.PcdFlashFvFspsBase|gKabylakeFspPkgTokenSpaceGuid.PcdFlashFvFspsSize
+FV = FSP-S
+
+#FSP-M
+#FSP-M FV offset = FSP-S size|FSP-M FV size
+$(gKabylakeFspPkgTokenSpaceGuid.PcdFlashFvFspsSize)|gKabylakeFspPkgTokenSpaceGuid.PcdFlashFvFspmSize
+gKabylakeFspPkgTokenSpaceGuid.PcdFlashFvFspmBase|gKabylakeFspPkgTokenSpaceGuid.PcdFlashFvFspmSize
+FV = FSP-M
+
+#FSP-T
+#FSP-T FV offset = FSP-S size + FSP-M size|FSP-T FV size
+$(gKabylakeFspPkgTokenSpaceGuid.PcdFlashFvFspsSize) + $(gKabylakeFspPkgTokenSpaceGuid.PcdFlashFvFspmSize)|gKabylakeFspPkgTokenSpaceGuid.PcdFlashFvFsptSize
+gKabylakeFspPkgTokenSpaceGuid.PcdFlashFvFsptBase|gKabylakeFspPkgTokenSpaceGuid.PcdFlashFvFsptSize
+FV = FSP-T
+
+
+################################################################################
+#
+# FV Section
+#
+# [FV] section is used to define what components or modules are placed within a flash
+# device file.  This section also defines order the components and modules are positioned
+# within the image.  The [FV] section consists of define statements, set statements and
+# module statements.
+#
+################################################################################
+[FV.FSP-T]
+BlockSize          = 0x00001000
+FvAlignment        = 16         #FV alignment and FV attributes setting.
+ERASE_POLARITY     = 1
+MEMORY_MAPPED      = TRUE
+STICKY_WRITE       = TRUE
+LOCK_CAP           = TRUE
+LOCK_STATUS        = TRUE
+WRITE_DISABLED_CAP = TRUE
+WRITE_ENABLED_CAP  = TRUE
+WRITE_STATUS       = TRUE
+WRITE_LOCK_CAP     = TRUE
+WRITE_LOCK_STATUS  = TRUE
+READ_DISABLED_CAP  = TRUE
+READ_ENABLED_CAP   = TRUE
+READ_STATUS        = TRUE
+READ_LOCK_CAP      = TRUE
+READ_LOCK_STATUS   = TRUE
+FvNameGuid         = 7BEBD21A-A1E5-4C4C-9CA1-A0C168BCBD9D
+
+#
+# FSP header
+#
+INF RuleOverride = FSPHEADER   $(FSP_PACKAGE)/FspHeader/FspHeader.inf
+INF RuleOverride = RELOC   IntelFsp2Pkg/FspSecCore/FspSecCoreT.inf
+
+#
+# Project specific configuration data files
+#
+!if gKabylakeFspPkgTokenSpaceGuid.PcdCfgRebuild == FALSE
+FILE RAW = $(FSP_T_UPD_FFS_GUID) {
+    SECTION RAW = $(OUTPUT_DIRECTORY)/$(TARGET)_$(TOOL_CHAIN_TAG)/FV/$(FSP_T_UPD_TOOL_GUID).bin
+}
+!endif
+
+
+[FV.FSP-M]
+BlockSize          = 0x00001000
+FvAlignment        = 16         #FV alignment and FV attributes setting.
+ERASE_POLARITY     = 1
+MEMORY_MAPPED      = TRUE
+STICKY_WRITE       = TRUE
+LOCK_CAP           = TRUE
+LOCK_STATUS        = TRUE
+WRITE_DISABLED_CAP = TRUE
+WRITE_ENABLED_CAP  = TRUE
+WRITE_STATUS       = TRUE
+WRITE_LOCK_CAP     = TRUE
+WRITE_LOCK_STATUS  = TRUE
+READ_DISABLED_CAP  = TRUE
+READ_ENABLED_CAP   = TRUE
+READ_STATUS        = TRUE
+READ_LOCK_CAP      = TRUE
+READ_LOCK_STATUS   = TRUE
+FvNameGuid         = 52F1AFB6-78A6-448f-8274-F370549AC5D0
+
+#
+# FSP header
+#
+INF RuleOverride = FSPHEADER   $(FSP_PACKAGE)/FspHeader/FspHeader.inf
+
+#
+# It is important to keep the proper order for these PEIMs
+# for this implementation
+#
+INF RuleOverride = RELOC   IntelFsp2Pkg/FspSecCore/FspSecCoreM.inf
+
+INF $(FSP_PACKAGE)/Override/MdeModulePkg/Core/Pei/PeiMain.inf  # FSPO-0006: RoyalParkOverrideContent
+INF MdeModulePkg/Universal/PCD/Pei/Pcd.inf
+
+!if $(TARGET) == DEBUG
+  INF $(FSP_PACKAGE)/FspDebugInit/Pei/FspDebugServicePei.inf
+!endif
+
+#
+# Project specific PEIMs
+#
+INF $(FSP_PACKAGE)/FspPcdInit/Pei/FspPcdInit.inf
+INF $(PLATFORM_SI_PACKAGE)/SiInit/Pei/SiInitPreMemFsp.inf
+INF $(FSP_PACKAGE)/FspInit/Pei/FspInitPreMem.inf
+
+#
+# Description file
+#
+FILE RAW = D9093578-08EB-44DF-B9D8-D0C1D3D55D96 {
+    SECTION RAW = $(FSP_PACKAGE)/FspDescription/FspDescription.txt
+}
+
+#
+# Project specific configuration data files
+#
+!if gKabylakeFspPkgTokenSpaceGuid.PcdCfgRebuild == FALSE
+FILE RAW = $(FSP_M_UPD_FFS_GUID) {
+    SECTION RAW = $(OUTPUT_DIRECTORY)/$(TARGET)_$(TOOL_CHAIN_TAG)/FV/$(FSP_M_UPD_TOOL_GUID).bin
+}
+!endif
+
+[FV.FSP-S]
+BlockSize          = 0x00001000
+FvAlignment        = 16         #FV alignment and FV attributes setting.
+ERASE_POLARITY     = 1
+MEMORY_MAPPED      = TRUE
+STICKY_WRITE       = TRUE
+LOCK_CAP           = TRUE
+LOCK_STATUS        = TRUE
+WRITE_DISABLED_CAP = TRUE
+WRITE_ENABLED_CAP  = TRUE
+WRITE_STATUS       = TRUE
+WRITE_LOCK_CAP     = TRUE
+WRITE_LOCK_STATUS  = TRUE
+READ_DISABLED_CAP  = TRUE
+READ_ENABLED_CAP   = TRUE
+READ_STATUS        = TRUE
+READ_LOCK_CAP      = TRUE
+READ_LOCK_STATUS   = TRUE
+FvNameGuid         = 1B5C27FE-F01C-4fbc-AEAE-341B2E992A17
+
+#
+# FSP header
+#
+INF RuleOverride = FSPHEADER   $(FSP_PACKAGE)/FspHeader/FspHeader.inf
+
+#
+# It is important to keep the proper order for these PEIMs
+# for this implementation
+#
+INF RuleOverride = RELOC   IntelFsp2Pkg/FspSecCore/FspSecCoreS.inf
+
+INF MdeModulePkg/Core/DxeIplPeim/DxeIpl.inf
+INF RuleOverride = PE32 $(FSP_PACKAGE)/FspInit/Pei/FspInit.inf
+!if gSiPkgTokenSpaceGuid.PcdPeiDisplayEnable == TRUE
+INF RuleOverride = PE32  MdeModulePkg/Universal/PcatSingleSegmentPciCfg2Pei/PcatSingleSegmentPciCfg2Pei.inf
+  FILE PEIM = 76ed893a-b2f9-4c7d-a05f-1ea170ecf6cd {
+    SECTION COMPRESS {
+      SECTION PE32 = $(PLATFORM_SI_PACKAGE)/SystemAgent/IntelGraphicsPeim/Binaries/IntelGraphicsPeim.efi
+      SECTION PEI_DEPEX_EXP = {gEfiPeiStallPpiGuid}
+      SECTION UI = "IntelGraphicsPeim"
+    }
+  }
+!endif  #PcdPeiDisplayEnable
+
+#
+# CpuMp PEIM for MpService PPI
+#
+INF RuleOverride = PE32 $(PLATFORM_SI_PACKAGE)/Override/UefiCpuPkg/CpuMpPei/CpuMpPei.inf    # SICO-KBL-0002
+INF RuleOverride = PE32 $(PLATFORM_SI_PACKAGE)/SiInit/Pei/SiInit.inf
+INF RuleOverride = PE32 $(PLATFORM_SI_PACKAGE)/SystemAgent/SaInit/Dxe/SaInitFsp.inf
+INF RuleOverride = PE32 $(PLATFORM_SI_PACKAGE)/Pch/PchInit/Dxe/PchInitDxeFsp.inf
+INF RuleOverride = PE32 $(PLATFORM_SI_PACKAGE)/Me/HeciInit/Dxe/HeciInitFsp.inf
+INF RuleOverride = PE32 IntelFsp2Pkg/FspNotifyPhase/FspNotifyPhasePeim.inf
+
+#
+# Project specific configuration data files
+#
+!if gKabylakeFspPkgTokenSpaceGuid.PcdCfgRebuild == FALSE
+FILE RAW = $(FSP_S_UPD_FFS_GUID) {
+    SECTION RAW = $(OUTPUT_DIRECTORY)/$(TARGET)_$(TOOL_CHAIN_TAG)/FV/$(FSP_S_UPD_TOOL_GUID).bin
+}
+!endif
+
+[Rule.Common.SEC]
+  FILE SEC = $(NAMED_GUID) RELOCS_STRIPPED {
+    TE  TE    Align = 8       $(INF_OUTPUT)/$(MODULE_NAME).efi
+  }
+
+[Rule.Common.SEC.RELOC]
+  FILE SEC = $(NAMED_GUID) {
+    TE  TE    Align = 8       $(INF_OUTPUT)/$(MODULE_NAME).efi
+  }
+
+[Rule.Common.PEI_CORE]
+  FILE PEI_CORE = $(NAMED_GUID)            {
+    TE       TE               $(INF_OUTPUT)/$(MODULE_NAME).efi
+    UI       STRING="$(MODULE_NAME)" Optional
+    VERSION  STRING="$(INF_VERSION)" Optional BUILD_NUM=$(BUILD_NUMBER)
+  }
+
+[Rule.Common.PEIM.NORELOC]
+  FILE PEIM = $(NAMED_GUID) RELOCS_STRIPPED  {
+     PEI_DEPEX PEI_DEPEX Optional        $(INF_OUTPUT)/$(MODULE_NAME).depex
+     TE        TE                        $(INF_OUTPUT)/$(MODULE_NAME).efi
+     UI        STRING="$(MODULE_NAME)" Optional
+     VERSION   STRING="$(INF_VERSION)" Optional BUILD_NUM=$(BUILD_NUMBER)
+  }
+
+[Rule.Common.PEIM]
+  FILE PEIM = $(NAMED_GUID)               {
+     PEI_DEPEX PEI_DEPEX Optional        $(INF_OUTPUT)/$(MODULE_NAME).depex
+     TE        TE                        $(INF_OUTPUT)/$(MODULE_NAME).efi
+     UI        STRING="$(MODULE_NAME)" Optional
+     VERSION   STRING="$(INF_VERSION)" Optional BUILD_NUM=$(BUILD_NUMBER)
+  }
+
+[Rule.Common.PEIM.PE32]
+  FILE PEIM = $(NAMED_GUID)               {
+     PEI_DEPEX PEI_DEPEX Optional        $(INF_OUTPUT)/$(MODULE_NAME).depex
+     COMPRESS {
+        PE32      PE32                   $(INF_OUTPUT)/$(MODULE_NAME).efi
+        UI        STRING="$(MODULE_NAME)" Optional
+        VERSION   STRING="$(INF_VERSION)" Optional BUILD_NUM=$(BUILD_NUMBER)
+     }
+  }
+
+[Rule.Common.USER_DEFINED.FSPHEADER]
+  FILE RAW = $(NAMED_GUID)               {
+     RAW BIN                  |.acpi
+  }
+

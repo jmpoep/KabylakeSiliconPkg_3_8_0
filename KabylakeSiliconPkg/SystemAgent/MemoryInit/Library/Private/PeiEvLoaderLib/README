@@ -1,0 +1,15 @@
+Warning:  This code MUST be removed once you are done using it for Electrical Validation Testing.
+It should not be in the final BIOS as it can slow the boot time and leave the system in a vulnerable state.
+DO NOT include this code in your final BIOS image.
+
+To include this code into your BIOS image you will need to add to your compiler flags one to define SSA_FLAG as 1 (/DSSA_FLAG=1).
+You will also need to add this module .inf to your project's .dsc and .fdf files.
+If you are using the ClientRefCodePkgPei.dsc, you can add the following line close to the one used to build MemoryInit$(ECP).inf:
+
+$(PLATFORM_SI_PACKAGE)/SystemAgent/MemoryInit/EvLoader/Pei/EvLoaderPeim$(ECP).inf
+
+You will need to add a similar line in your .fdf file.
+
+When including the EvLoader in your project you will need to insure that it is loaded and that it runs before the MRC does.
+
+When running a target only test you will need to enable BDAT 4.0 support to retrieve test results.

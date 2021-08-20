@@ -1,0 +1,288 @@
+## @file
+# Component description file for PeiMemoryInitLib
+#
+# @copyright
+#  INTEL CONFIDENTIAL
+#  Copyright 1999 - 2018 Intel Corporation.
+#
+#  The source code contained or described herein and all documents related to the
+#  source code ("Material") are owned by Intel Corporation or its suppliers or
+#  licensors. Title to the Material remains with Intel Corporation or its suppliers
+#  and licensors. The Material may contain trade secrets and proprietary and
+#  confidential information of Intel Corporation and its suppliers and licensors,
+#  and is protected by worldwide copyright and trade secret laws and treaty
+#  provisions. No part of the Material may be used, copied, reproduced, modified,
+#  published, uploaded, posted, transmitted, distributed, or disclosed in any way
+#  without Intel's prior express written permission.
+#
+#  No license under any patent, copyright, trade secret or other intellectual
+#  property right is granted to or conferred upon you by disclosure or delivery
+#  of the Materials, either expressly, by implication, inducement, estoppel or
+#  otherwise. Any license under such intellectual property rights must be
+#  express and approved by Intel in writing.
+#
+#  Unless otherwise agreed by Intel in writing, you may not remove or alter
+#  this notice or any other notice embedded in Materials by Intel or
+#  Intel's suppliers or licensors in any way.
+#
+#  This file contains an 'Intel Peripheral Driver' and is uniquely identified as
+#  "Intel Reference Module" and is licensed for Intel CPUs and chipsets under
+#  the terms of your license agreement with Intel or your vendor. This file may
+#  be modified by the user, subject to additional terms of the license agreement.
+#
+# @par Specification Reference:
+#
+##
+
+
+[Defines]
+INF_VERSION = 0x00010017
+BASE_NAME = PeiMemoryInitLib
+FILE_GUID = 3B42EF57-16D3-44CB-8632-9FDB06B41451
+VERSION_STRING = 1.0
+MODULE_TYPE = PEIM
+LIBRARY_CLASS = MemoryInitLib
+#
+# The following information is for reference only and not required by the build tools.
+#
+# VALID_ARCHITECTURES = IA32 X64 IPF
+#
+
+
+
+[BuildOptions]
+MSFT: *_*_*_CC_FLAGS = /Oi /Gs262144 /Zi /Gm
+
+
+[LibraryClasses]
+PeimEntryPoint
+BaseMemoryLib
+BaseLib
+IoLib
+DebugLib
+PeiServicesLib
+PeiServicesTablePointerLib
+MemoryAllocationLib
+HobLib
+PciLib
+PcdLib
+PrintLib
+PeiSaPolicyLib
+ConfigBlockLib
+CpuPlatformLib
+PeiTxtLib
+TxtLib
+MmPciLib
+TimerLib
+CpuCommonLib
+MemoryAddressEncodeDecodeLib
+
+
+[Packages]
+MdePkg/MdePkg.dec
+UefiCpuPkg/UefiCpuPkg.dec
+ClientSiliconPkg/ClientSiliconPkg.dec
+KabylakeSiliconPkg/SiPkg.dec
+KabylakeSiliconPkg/KabylakeSiliconPrivate.dec
+
+[Pcd]
+gEfiMdePkgTokenSpaceGuid.PcdPciExpressBaseAddress
+
+[FixedPcd]
+gSiPkgTokenSpaceGuid.PcdMchBaseAddress
+
+
+[Sources]
+MemoryInit.c
+MemoryTest.c
+Source/Api/MrcApi.h
+Source/Api/MrcBdat.c
+Source/Api/MrcBdat.h
+Source/Api/MrcDebugPrint.c
+Source/Api/MrcDebugPrint.h
+Source/Api/MrcGeneral.c
+Source/Api/MrcGeneral.h
+Source/Api/MrcMemoryScrub.c
+Source/Api/MrcMemoryScrub.h
+Source/Api/MrcSaveRestore.c
+Source/Api/MrcSaveRestore.h
+Source/Api/MrcStartMemoryConfiguration.c
+Source/Api/MrcStartMemoryConfiguration.h
+#
+# DIMM Cell Test Files Begin
+#
+Source/DimmCellTest/DcttWrapper.h
+Source/DimmCellTest/DcttApi.h
+Source/DimmCellTest/MrcDimmCellTest.c
+Source/DimmCellTest/MrcDimmCellTest.h
+Source/DimmCellTest/Include/DcttAddressFunctions.h
+Source/DimmCellTest/Include/DcttAnalyzer.h
+Source/DimmCellTest/Include/DcttApiFunctions.h
+Source/DimmCellTest/Include/DcttCpgcFunctions.h
+Source/DimmCellTest/Include/DcttDebug.h
+Source/DimmCellTest/Include/DcttHelpers.h
+Source/DimmCellTest/Include/DcttInterpreter.h
+Source/DimmCellTest/Include/DcttLexer.h
+Source/DimmCellTest/Include/DcttMString.h
+Source/DimmCellTest/Include/DcttMarginFunctions.h
+Source/DimmCellTest/Include/DcttMcFunctions.h
+Source/DimmCellTest/Include/DcttParametersCheck.h
+Source/DimmCellTest/Include/DcttParser.h
+Source/DimmCellTest/Include/DcttPauseRefresh.h
+Source/DimmCellTest/Include/DcttPermutations.h
+Source/DimmCellTest/Include/DcttPrintHelpers.h
+Source/DimmCellTest/Include/DcttRegList.h
+Source/DimmCellTest/Include/DcttSetContainer.h
+Source/DimmCellTest/Include/DcttSwizzleFunctions.h
+Source/DimmCellTest/Include/DcttSymbol.h
+Source/DimmCellTest/Include/DcttSymbols.h
+Source/DimmCellTest/Include/DcttSysRestore.h
+Source/DimmCellTest/Include/DcttVersion.h
+Source/DimmCellTest/Source/DcttAnalyzer.c
+Source/DimmCellTest/Source/DcttCpgcFunctions.c
+Source/DimmCellTest/Source/DcttHelpers.c
+Source/DimmCellTest/Source/DcttInterpreter.c
+Source/DimmCellTest/Source/DcttLexer.c
+Source/DimmCellTest/Source/DcttMain.c
+Source/DimmCellTest/Source/DcttMarginFunctions.c
+Source/DimmCellTest/Source/DcttMcFunctions.c
+Source/DimmCellTest/Source/DcttMString.c
+Source/DimmCellTest/Source/DcttParametersCheck.c
+Source/DimmCellTest/Source/DcttParser.c
+Source/DimmCellTest/Source/DcttPauseRefresh.c
+Source/DimmCellTest/Source/DcttPermutations.c
+Source/DimmCellTest/Source/DcttPrintHelpers.c
+Source/DimmCellTest/Source/DcttSetContainer.c
+Source/DimmCellTest/Source/DcttSwizzleFunctions.c
+Source/DimmCellTest/Source/DcttSymbol.c
+Source/DimmCellTest/Source/DcttSysRestore.c
+#
+# DIMM Cell Test Files End
+#
+Source/Hal/MrcDdrIoDataOffsets.c
+Source/Hal/MrcDdrIoDataOffsets.h
+Source/Hal/MrcHalMiddleLevel.c
+Source/Hal/MrcHalMiddleLevel.h
+Source/Hal/MrcHalRegisterAccess.c
+Source/Hal/MrcHalRegisterAccess.h
+Source/Hal/MrcRegisterCache.c
+Source/Hal/MrcRegisterCache.h
+Source/Include/McAddress.h
+Source/Include/MrcCommandTraining.h
+Source/Include/MrcCommon.h
+Source/Include/MrcCrosser.h
+Source/Include/MrcDdr3.h
+Source/Include/MrcDdr3Registers.h
+Source/Include/MrcDdr4Registers.h
+Source/Include/MrcGlobal.h
+Source/Include/MrcIoControl.h
+Source/Include/MrcMalloc.h
+Source/Include/MrcMcConfiguration.h
+Source/Include/MrcMemoryMap.h
+Source/Include/MrcReset.h
+Source/Include/MrcVersion.h
+Source/Include/MrcRegisters/McGdxcbar.h
+Source/Include/MrcRegisters/MrcMcRegister.h
+Source/Include/MrcRegisters/MrcMcRegister0xxx.h
+Source/Include/MrcRegisters/MrcMcRegister1xxx.h
+Source/Include/MrcRegisters/MrcMcRegister2xxx.h
+Source/Include/MrcRegisters/MrcMcRegister3xxx.h
+Source/Include/MrcRegisters/MrcMcRegister4xxx.h
+Source/Include/MrcRegisters/MrcMcRegister5xxx.h
+Source/Include/MrcRegisters/MrcMcRegister6xxx.h
+Source/Include/MrcRegisters/MrcMcRegister7xxx.h
+Source/Include/MrcRegisters/MrcMcRegisterEnum.h
+Source/Include/MrcRegisters/MrcMcRegisterMacro.h
+Source/Include/MrcRegisters/MrcMcRegisterMacro0xxx.h
+Source/Include/MrcRegisters/MrcMcRegisterMacro1xxx.h
+Source/Include/MrcRegisters/MrcMcRegisterMacro2xxx.h
+Source/Include/MrcRegisters/MrcMcRegisterMacro3xxx.h
+Source/Include/MrcRegisters/MrcMcRegisterMacro4xxx.h
+Source/Include/MrcRegisters/MrcMcRegisterMacro5xxx.h
+Source/Include/MrcRegisters/MrcMcRegisterMacro6xxx.h
+Source/Include/MrcRegisters/MrcMcRegisterMacro7xxx.h
+Source/Include/MrcRegisters/MrcMcRegisterStruct.h
+Source/Include/MrcRegisters/MrcMcRegisterStruct0xxx.h
+Source/Include/MrcRegisters/MrcMcRegisterStruct1xxx.h
+Source/Include/MrcRegisters/MrcMcRegisterStruct2xxx.h
+Source/Include/MrcRegisters/MrcMcRegisterStruct3xxx.h
+Source/Include/MrcRegisters/MrcMcRegisterStruct4xxx.h
+Source/Include/MrcRegisters/MrcMcRegisterStruct5xxx.h
+Source/Include/MrcRegisters/MrcMcRegisterStruct6xxx.h
+Source/Include/MrcRegisters/MrcMcRegisterStruct7xxx.h
+Source/Include/MrcRegisters/Pci000.h
+Source/McConfiguration/MrcAddressDecodeConfiguration.c
+Source/McConfiguration/MrcAddressDecodeConfiguration.h
+Source/McConfiguration/MrcPowerModes.c
+Source/McConfiguration/MrcPowerModesUpServer.c
+Source/McConfiguration/MrcPowerModes.h
+Source/McConfiguration/MrcRefreshConfiguration.c
+Source/McConfiguration/MrcRefreshConfiguration.h
+Source/McConfiguration/MrcSchedulerParameters.c
+Source/McConfiguration/MrcSchedulerParameters.h
+Source/McConfiguration/MrcTimingConfiguration.c
+Source/McConfiguration/MrcTimingConfiguration.h
+Source/ReadTraining/MrcReadDqDqs.c
+Source/ReadTraining/MrcReadDqDqs.h
+Source/ReadTraining/MrcReadReceiveEnable.c
+Source/ReadTraining/MrcReadReceiveEnable.h
+Source/Services/MrcCommandTraining.c
+Source/Services/MrcCommon.c
+Source/Services/MrcCrosser.c
+Source/Services/MrcDdr3.c
+Source/Services/MrcIoControl.c
+Source/Services/MrcMalloc.c
+Source/Services/MrcMcConfiguration.c
+Source/Services/MrcMemoryMap.c
+Source/Services/MrcReset.c
+Source/SpdProcessing/MrcSpdProcessing.c
+Source/SpdProcessing/MrcSpdProcessing.h
+Source/Ssa/BiosSsaCommonConfig.c
+Source/Ssa/BiosSsaCommonConfig.h
+Source/Ssa/BiosSsaMemoryClientConfig.c
+Source/Ssa/BiosSsaMemoryClientConfig.h
+Source/Ssa/BiosSsaMemoryConfig.c
+Source/Ssa/BiosSsaMemoryConfig.h
+Source/Ssa/BiosSsaResultsConfig.c
+Source/Ssa/BiosSsaResultsConfig.h
+Source/Ssa/MrcSsaCommon.c
+Source/Ssa/MrcSsaCommon.h
+Source/Ssa/MrcSsaInitialize.c
+Source/Ssa/MrcSsaInitialize.h
+Source/Ssa/MrcSsaServices.c
+Source/Ssa/Include/BssaLogging.h
+Source/Ssa/Include/SsaBios.h
+Source/WriteTraining/MrcWriteDqDqs.c
+Source/WriteTraining/MrcWriteDqDqs.h
+Source/WriteTraining/MrcWriteLeveling.c
+Source/WriteTraining/MrcWriteLeveling.h
+
+
+[Ppis]
+gSiPreMemPolicyPpiGuid ## CONSUMES
+gSsaBiosCallBacksPpiGuid ## CONSUMES
+gSsaBiosServicesPpiGuid ## CONSUMES
+gPeiTxtMemoryUnlockedPpiGuid ## CONSUMES
+gPeiCapsulePpiGuid ## CONSUMES
+gPeiTxtReadyToRunMemoryInitPpiGuid ## CONSUMES
+gSiPreMemPolicyPpiGuid ## CONSUMES
+
+[Guids]
+gEfiMemoryTypeInformationGuid
+gSaConfigHobGuid
+gSiMemoryS3DataGuid             ## PRODUCES ## HOB
+gSiMemoryInfoDataGuid           ## PRODUCES ## HOB
+gSiMemoryPlatformDataGuid       ## PRODUCES ## HOB
+gEfiAcpiVariableGuid
+gEfiSmmPeiSmramMemoryReserveGuid
+gEfiMemorySchemaGuid
+gMrcSchemaListHobGuid
+gSsaPostcodeHookGuid
+gCpuSecurityPreMemConfigGuid
+gSaOverclockingPreMemConfigGuid
+gSsaBiosResultsGuid
+gRmtResultMetadataGuid
+gRmtResultColumnsGuid
+gMargin2DResultMetadataGuid
+gMargin2DResultColumnsGuid
+

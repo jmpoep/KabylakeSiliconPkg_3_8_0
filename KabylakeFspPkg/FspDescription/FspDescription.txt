@@ -1,0 +1,2 @@
+This FSP supports the following:
+Skylake processor and Sunrise Point PCH
